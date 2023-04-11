@@ -1,0 +1,264 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                
+                <div class="card-body">
+                  <h5 class="card-title">Total Registrations</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bx bx-user"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 (click)="total()">{{contss}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title" >Baptised Members</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bx bx-user" ></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 (click)="onClick()">{{counts}}</h6>
+                      
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card revenue-card">
+
+                
+                <div class="card-body">
+                  <h5 class="card-title">Total Baptised Percentage</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 (click)="onClick()">{{formattedPercentage}}</h6>
+                      
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card customers-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Not-Baptised Members</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 (click)="nottt()">{{count}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card customers-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Not-Baptised Percentage</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6  (click)="nottt()">{{formatpercentage}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Male Members</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bx  bx-male"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 (click)="male()">{{contsss}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Female Members</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bx  bx-female"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 (click)="femalee()">{{conss}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card " style="color: red;">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Total YouTube Subscribers</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bx  bxl-youtube"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>{{subscribers}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card customers-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Total YouTube Video Uploads</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bx  bxs-cloud-upload"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>{{videoCount}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+             <!-- Revenue Card -->
+             <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title">Total YouTube Views</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="ri  ri-eye-line"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>{{views}}</h6>
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+          
+          
+           
+          </div>
+        </div><!-- End Left side columns -->
+
+      
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Siloam Glory Mission</span></strong>. All Rights Reserved
+    </div>
+    
+  </footer><!-- End Footer -->
+  <app-header></app-header>

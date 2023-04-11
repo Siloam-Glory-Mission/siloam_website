@@ -1,0 +1,49 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">  
+    <section class="section dashboard"> 
+      <div class="card">
+        <div class="card-body"> 
+          <h5 class="card-title">Not-Baptised List</h5> 
+          <div class="col btn-group" role="group" >
+            <button class="btn btn-primary" [useExistingCss]="true" printSectionId="print-section" ngxPrint><i class="bi bi-printer"></i> Print</button>
+            <button class="btn btn-success" (click)="exportexcel()"><i class="bi bi-file-earmark-excel"></i> Excel</button>
+            
+          </div>
+          <div class="col-md-6 text-danger">Total Number Of Non-Baptised Members : {{counts}}</div>
+
+          <div class="col-md-3 " style="float: right;"><input type="text" class="form-control" [(ngModel)]="search"placeholder="Search...."></div>
+         <div class="col-md-12" id="print-section">
+          <table class="table table-bordred" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Unique ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Baptised Status</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Last Updated at</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let x of notbaptised | search:search; let i=index">
+              <tr>
+                <th scope="row">{{i+1}}</th>
+                <td>{{x.code}}</td>
+                <td>{{x.surname}} {{x.name}}</td>
+                <td>{{x.sex}}</td>
+                <td class="text-danger">{{x.status}}</td>
+                <td>{{x.phone}}</td>
+                <td class="">{{x.CreationDate | date:'dd/MM/yyyy hh:mm a'}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+                  </div>
+                  </div>
+      </div>    
+    </section>
+  </main>  
+
+  
+  

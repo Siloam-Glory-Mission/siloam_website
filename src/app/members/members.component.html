@@ -1,0 +1,349 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">  
+    <section class="section dashboard" *ngIf="page === 1"> 
+      <div class="card">
+        <div class="card-body">
+            <div class="row ">
+                <div class="col-md-12">
+          <h5 class="card-title">Total Members List</h5> 
+         
+         
+
+          <div class="col-md-3 text-primary" style="float: right;">Search By Name / ID / Phone Number <input type="text" class="form-control" [(ngModel)]="search" placeholder="Search...."></div>
+          <table class="table table-bordred" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Unique ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Christian Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Baptised Date</th>
+                <th scope="col">Spiritual Age</th>
+                <th scope="col">Baptised Status</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Last Updated at</th>
+                <th scope="col" colspan="2">Action</th>
+                
+              </tr>
+            </thead>
+            <tbody *ngFor="let x of examdata | search:search; let i=index">
+              <tr>
+                <th scope="row">{{i+1}}</th>
+
+                <td *ngIf="x.code !== ''">{{x.code}}</td>
+                <td *ngIf="!x.code || x.code === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+               
+                <td *ngIf="x.name !== ''">{{x.surname}} {{x.name}}</td>
+                <td *ngIf="!x.name || x.name === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+               
+                <td *ngIf="x.cname !== ''">{{x.cname}}</td>
+                <td *ngIf="!x.cname || x.cname === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+               
+                <td *ngIf="x.sex !== ''">{{x.sex}}</td>
+                <td *ngIf="!x.sex || x.sex === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+               
+                <td *ngIf="x.sdob !== ''">{{x.sdob}}</td>
+                <td *ngIf="!x.sdob || x.sdob === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                
+                <td *ngIf="x.sage !== ''">{{x.sage}}</td>
+                <td *ngIf="!x.sage || x.sage === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+
+                <td *ngIf="x.status !== ''">{{x.status}}</td>
+                <td *ngIf="!x.status || x.status === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                
+                <td *ngIf="x.phone !== ''">{{x.phone}}</td>
+                <td *ngIf="!x.phone || x.phone === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td>{{x.CreationDate | date:'dd/MM/yyyy hh:mm a'}}</td>
+                <td><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" (click)="getselecteddetails(x.id)" data-bs-target="#basicModal">
+                    <i class="bi bi-zoom-in"></i>
+                  </button>
+               </td> 
+               <td><button type="button" class="btn btn-primary btn-sm" (click)="Edit()">
+                  <i class="ri-edit-2-fill"></i>
+                </button></td>
+              </tr>
+              
+            </tbody>
+          </table>
+          <div class="modal fade" id="basicModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header" *ngFor="let x of modaldetails">
+                  <h5 class="modal-title">{{x.surname}} {{x.name}} ({{x.code}})</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-borderless" *ngFor="let x of modaldetails; let i=index">
+                      <tr>
+                        <td>Siloam ID</td>
+                        <td>:</td>
+                        <td *ngIf="x.code !== ''">{{x.code}}</td>
+                        <td *ngIf="!x.code || x.code === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Surname</td>
+                        <td>:</td>
+                        <td *ngIf="x.surname !== ''">{{x.surname}}</td>
+                        <td *ngIf="!x.surname || x.surname === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td *ngIf="x.name !== ''">{{x.name}}</td>
+                        <td *ngIf="!x.name || x.name === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Christian Name</td>
+                        <td>:</td>
+                        <td *ngIf="x.cname !== ''">{{x.cname}}</td>
+                        <td *ngIf="!x.cname || x.cname === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Gender</td>
+                        <td>:</td>
+                        <td *ngIf="x.sex !== ''">{{x.sex}}</td>
+                        <td *ngIf="!x.sex || x.sex === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Birth</td>
+                        <td>:</td>
+                        <td *ngIf="x.dob !== ''">{{x.dob}}</td>
+                        <td *ngIf="!x.dob || x.dob === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Age</td>
+                        <td>:</td>
+                        <td *ngIf="x.age !== ''">{{x.age}}</td>
+                        <td *ngIf="!x.age || x.age === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Baptised Status</td>
+                        <td>:</td>
+                        <td *ngIf="x.status !== ''">{{x.status}}</td>
+                        <td *ngIf="!x.status || x.status === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Date Of Baptised</td>
+                        <td>:</td>
+                        <td *ngIf="x.sdob !== ''">{{x.sdob}}</td>
+                        <td *ngIf="!x.sdob || x.sdob === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Spiritual Age</td>
+                        <td>:</td>
+                        <td *ngIf="x.sage !== ''">{{x.sage}}</td>
+                        <td *ngIf="!x.sage || x.sage === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Occupation</td>
+                        <td>:</td>
+                        <td *ngIf="x.occupation !== ''">{{x.occupation}}</td>
+                        <td *ngIf="!x.occupation || x.occupation === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Others</td>
+                        <td>:</td>
+                        <td *ngIf="x.others !== ''">{{x.others}}</td>
+                        <td *ngIf="!x.others || x.others === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Software Designation</td>
+                        <td>:</td>
+                        <td *ngIf="x.software !== ''">{{x.software}}</td>
+                        <td *ngIf="!x.software || x.software === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Business</td>
+                        <td>:</td>
+                        <td *ngIf="x.business !== ''">{{x.business}}</td>
+                        <td *ngIf="!x.business || x.business === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Studying</td>
+                        <td>:</td>
+                        <td *ngIf="x.study !== ''">{{x.study}}</td>
+                        <td *ngIf="!x.study || x.study === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+              <tr>
+                        <td>Marital Status</td>
+                        <td>:</td>
+                        <td *ngIf="x.marital !== ''">{{x.marital}}</td>
+                        <td *ngIf="!x.marital || x.marital === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>D.No</td>
+                        <td>:</td>
+                        <td *ngIf="x.dno !== ''">{{x.dno}}</td>
+                        <td *ngIf="!x.dno || x.dno === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Street</td>
+                        <td>:</td>
+                        <td *ngIf="x.parish !== ''">{{x.parish}}</td>
+                        <td *ngIf="!x.parish || x.parish === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Village</td>
+                        <td>:</td>
+                        <td *ngIf="x.village !== ''">{{x.village}}</td>
+                        <td *ngIf="!x.village || x.village === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>City</td>
+                        <td>:</td>
+                        <td *ngIf="x.city !== ''">{{x.city}}</td>
+                        <td *ngIf="!x.city || x.city === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Mobile No.</td>
+                        <td>:</td>
+                        <td *ngIf="x.phone !== ''">{{x.phone}}</td>
+                        <td *ngIf="!x.phone || x.phone === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>E-mail</td>
+                        <td>:</td>
+                        <td *ngIf="x.email !== ''">{{x.email}}</td>
+                        <td *ngIf="!x.email || x.email === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+                      <tr>
+                        <td>Last Updated On</td>
+                        <td>:</td>
+                        <td *ngIf="x.CreationDate !== ''">{{x.CreationDate | date:'dd-MM-yyyy'}}</td>
+                        <td *ngIf="!x.CreationDate || x.CreationDate === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                      </tr>
+             </table>
+
+                 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+                  </div>
+      </div> 
+    </div>  
+</div>  
+    </section>
+    <section *ngIf="page === 2">
+      <form>
+         <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Update Details
+               
+              </h5>
+              
+              <!-- Multi Columns Form -->
+              <form class="row g-3" [formGroup]="updateform" (ngSubmit)="onsubmit()">
+                <div class="col-md-6">
+                  <label  class="form-label">Name</label>
+                  <input type="text" class="form-control" formControlName="name"   >
+                </div>
+                <div class="col-md-6">
+                  <label  class="form-label">Christian Name</label>
+                  <input type="text" class="form-control" formControlName="cname">
+                </div>
+                <div class="col-md-6">
+                  <label  class="form-label">Baptised Status</label>
+                  <input type="text" class="form-control" formControlName="status">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Surname</label>
+                  <input type="text" class="form-control" formControlName="surname">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Gender</label>
+                  <input type="text" class="form-control" formControlName="sex">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Baptised Date</label>
+                  <input type="text" class="form-control"formControlName="sdob">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Date Of Birth</label>
+                  <input type="text" class="form-control" formControlName="dob">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Age</label>
+                  <input type="text" class="form-control" formControlName="age">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Spiritual Age</label>
+                  <input type="text" class="form-control" formControlName="sage">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Occupation</label>
+                  <input type="text" class="form-control" formControlName="occupation">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Software Designation</label>
+                  <input type="text" class="form-control" formControlName="software">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Business</label>
+                  <input type="text" class="form-control" formControlName="business">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Studying</label>
+                  <input type="text" class="form-control" formControlName="studying">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Others</label>
+                  <input type="text" class="form-control" formControlName="others">
+                </div>
+                 <div class="col-md-6">
+                  <label class="form-label">Marital Status</label>
+                  <input type="text" class="form-control" formControlName="marital">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">D.NO.</label>
+                  <input type="text" class="form-control" formControlName="dno">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Village</label>
+                  <input type="text" class="form-control" formControlName="parish">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">City</label>
+                  <input type="text" class="form-control" formControlName="city">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Mobile No.</label>
+                  <input type="text" class="form-control" formControlName="phone">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">E-Mail</label>
+                  <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Last Updated On</label>
+                  <input type="text" class="form-control" formControlName="CreationDate">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form><!-- End Multi Columns Form -->
+
+            </div>
+          </div>
+      </form>
+    </section>
+  </main>  
+
+  
+  

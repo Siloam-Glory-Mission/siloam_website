@@ -1,0 +1,72 @@
+<main>
+    <div class="container">
+  
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+  
+              <div class="loginCntHeader text-center  py-2 mb-4 rounded-4 shadow-lg">
+                <img src="assets/img/logo/2.png" class="logo">
+             </div>
+  
+              <div class="card mb-3">
+  
+                <div class="card-body">
+  
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                  
+                  </div>
+                  <form novalidate [formGroup]="logdata" (ngSubmit)="onLogin()">
+                    <div class="row g-4">
+                         <div class="col-md-12 col-12 ">
+                           <div class="form-group ">
+                               <label for="loginmobile">Enter Username<span
+                                 class="text-danger font-weight-bold">*</span></label>
+                               <input type="text" id="loginmobile" name="loginmobile" class="form-control "
+                                 minlength="9" maxlength="9" required
+                                 autocomplete="off" formControlName="username" (keyup)="clearfunction()"  placeholder="Enter Username">
+                               <div *ngIf="logdata.controls['username'].invalid && logdata.controls['username'].touched" class="text-danger text-center mt-2 ">
+                                 <div *ngIf="logdata.controls['username'].errors">
+                                     <b>Enter username</b> 
+                                 </div>
+                               </div>
+                           </div>
+                         </div>
+                         <div class="col-md-12 col-12 ">
+                           <div class="form-group">
+                             <label for="password">Enter Password<span
+                                 class="text-danger font-weight-bold">*</span></label>
+                             <input type="password" id="password" name="password" minlength="9" maxlength="9" class="form-control"
+                                 required autocomplete="off"  formControlName="password" placeholder="Enter Password" (keyup)="clearfunction()">
+                             <div *ngIf="logdata.controls['password'].invalid && logdata.controls['password'].touched" class="text-danger text-center mt-2">
+                                 <div *ngIf="logdata.controls['password'].errors">
+                                   <b>Enter Password</b>
+                                 </div>
+                             </div>
+                             <a href="" style="font-size: 14px; color: #555555; float: right;margin-top: 5px;"> Forgot Password ?
+                             </a>
+                           </div>
+                       </div>
+                       <h6 class="text-danger text-center" *ngIf="show_log_error!=''" > {{show_log_error}} </h6>
+                       <div class="text-center col-12">
+                         <button type="submit" class="btn btn-primary rounded-pill-OFF shadow btn-block   w-100"
+                             id="login">Login</button> <br>
+                        
+                       </div>
+                    </div>
+                    </form>
+  
+                </div>
+              </div>
+  
+              
+            </div>
+          </div>
+        </div>
+  
+      </section>
+  
+    </div>
+  </main><!-- End #main -->
