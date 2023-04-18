@@ -56,7 +56,6 @@ export class MembersComponent {
     this.authservice.getData().subscribe((data:any)=>{
       
       this.examdata=data;
-      console.log(this.examdata)
       
    
     })

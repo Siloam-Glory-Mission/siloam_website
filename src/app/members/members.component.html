@@ -32,30 +32,22 @@
               <tr>
                 <th scope="row">{{i+1}}</th>
 
-                <td *ngIf="x.code !== ''">{{x.code}}</td>
-                <td *ngIf="!x.code || x.code === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td >{{x.code || 'N/A'}}</td>
                
-                <td *ngIf="x.name !== ''">{{x.surname}} {{x.name}}</td>
-                <td *ngIf="!x.name || x.name === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td >{{x.surname || 'N/A'}} {{x.name || 'N/A'}}</td>
                
-                <td *ngIf="x.cname !== ''">{{x.cname}}</td>
-                <td *ngIf="!x.cname || x.cname === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td>{{x.cname || 'N/A'}}</td>
                
-                <td *ngIf="x.sex !== ''">{{x.sex}}</td>
-                <td *ngIf="!x.sex || x.sex === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td >{{x.sex || 'N/A'}}</td>
                
-                <td *ngIf="x.sdob !== ''">{{x.sdob}}</td>
-                <td *ngIf="!x.sdob || x.sdob === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td >{{x.sdob || 'N/A'}}</td>
                 
-                <td *ngIf="x.sage !== ''">{{x.sage}}</td>
-                <td *ngIf="!x.sage || x.sage === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td>{{x.sage || 'N/A'}}</td>
 
-                <td *ngIf="x.status !== ''">{{x.status}}</td>
-                <td *ngIf="!x.status || x.status === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                <td>{{x.status || 'N/A'}}</td>
                 
-                <td *ngIf="x.phone !== ''">{{x.phone}}</td>
-                <td *ngIf="!x.phone || x.phone === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
-                <td>{{x.CreationDate | date:'dd/MM/yyyy hh:mm a'}}</td>
+                <td >{{x.phone ||'N/A'}}</td>
+                <td>{{x.CreationDate | date:'dd/MM/yyyy hh:mm a' || 'N/A'}}</td>
                 <td><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" (click)="getselecteddetails(x.id)" data-bs-target="#basicModal">
                     <i class="bi bi-zoom-in"></i>
                   </button>
