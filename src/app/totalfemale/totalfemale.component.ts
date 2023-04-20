@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/services/auth.service';
 
 import * as XLSX from 'xlsx';
+import { ToastrService } from 'ngx-toastr';
+
+
 
 
 
@@ -17,12 +20,14 @@ export class TotalfemaleComponent {
   
   title = 'angular-app';
   fileName= 'ExcelSheet.xlsx';
-  constructor(private authservice:AuthService){}
+  constructor(private authservice:AuthService,private toastr:ToastrService){}
   
   ngOnInit(){
     this.authservice.getData().subscribe((data:any)=>{
       
-      this.examdata=data;
+      this.examdata=data.data;
+      this.toastr.success("You are Seeing Total Female Members List")
+      
       
     var filter = this.examdata.filter((e: { sex: String; }) => e.sex == 'Female');
     this.baptised=filter;

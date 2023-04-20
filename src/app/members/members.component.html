@@ -7,7 +7,11 @@
             <div class="row ">
                 <div class="col-md-12">
           <h5 class="card-title">Total Members List</h5> 
-         
+          <div class="col btn-group" role="group" >
+            <button class="btn btn-primary" [useExistingCss]="true" printSectionId="print-section" ngxPrint><i class="bi bi-printer"></i> Print</button>
+            <button class="btn btn-success" (click)="exportexcel()"><i class="bi bi-file-earmark-excel"></i> Excel</button>
+            
+          </div>
          
 
           <div class="col-md-3 text-primary" style="float: right;">Search By Name / ID / Phone Number <input type="text" class="form-control" [(ngModel)]="search" placeholder="Search...."></div>
@@ -67,6 +71,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <div class="col-md-12" id="print-section">
                     <table class="table table-borderless" *ngFor="let x of modaldetails; let i=index">
                       <tr>
                         <td>Siloam ID</td>
@@ -216,6 +221,7 @@
                 </div>
               </div>
             </div>
+          </div>
           </div>
           
           

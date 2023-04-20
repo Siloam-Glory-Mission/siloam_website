@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-notbaptised',
@@ -17,11 +19,12 @@ export class NotbaptisedComponent {
   
   title = 'angular-app';
   fileName= 'ExcelSheet.xlsx';
-  constructor(private authservice:AuthService){}
+  constructor(private authservice:AuthService,private toastr:ToastrService){}
   ngOnInit(){
     this.authservice.getData().subscribe((data:any)=>{
       let counts=0;
-      this.notbaptisedd=data;
+      this.notbaptisedd=data.data;
+      this.toastr.success("You are Seeing Not-Baptised Members Data")
       
     var filter = this.notbaptisedd.filter((e: { status: String; }) => e.status == 'Not-Baptised');
     this.notbaptised=filter;

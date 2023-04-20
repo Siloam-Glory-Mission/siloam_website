@@ -55,7 +55,7 @@ export class MembersComponent {
     this.page=1;
     this.authservice.getData().subscribe((data:any)=>{
       
-      this.examdata=data;
+      this.examdata=data.data;
       
    
     })

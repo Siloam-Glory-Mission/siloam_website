@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../core/services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -30,10 +31,11 @@ export class DashboardComponent {
   percentage: any;
   contsss: any;
   conss: any;
-  constructor(private authservice:AuthService,private http:HttpClientModule,private router: Router){}
+  constructor(private authservice:AuthService,private http:HttpClientModule,private router: Router,private toastr:ToastrService){}
   
   ngOnInit(){
     this.authservice.getData().subscribe((data:any)=>{
+      console.log(data)
       let count = 0;
       let counts = 0;
       let contss=0;
@@ -41,7 +43,8 @@ export class DashboardComponent {
       let conss=0;
 
       
-      this.examdata=data;
+      this.examdata=data.data;
+     // this.toastr.success(data.message)
       //this.totalcount=this.examdata.length;
       var filter = this.examdata.filter((e: { status: String; }) => e.status == 'Baptised');
     this.baptised=filter;
