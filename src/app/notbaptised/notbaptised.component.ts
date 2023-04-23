@@ -18,24 +18,30 @@ export class NotbaptisedComponent {
   notbaptisedd: any;
   
   title = 'angular-app';
-  fileName= 'ExcelSheet.xlsx';
+  fileName= '{{ExcelSheet}}.xlsx';
   constructor(private authservice:AuthService,private toastr:ToastrService){}
   ngOnInit(){
-    this.authservice.getData().subscribe((data:any)=>{
+    this.authservice.getnotbaptised().subscribe((data:any)=>{
+     // console.log(data.data)
       let counts=0;
       this.notbaptisedd=data.data;
-      this.toastr.success("You are Seeing Not-Baptised Members Data")
-      
-    var filter = this.notbaptisedd.filter((e: { status: String; }) => e.status == 'Not-Baptised');
-    this.notbaptised=filter;
-    for(var i=0;i<this.notbaptised.length;i++){
-      if(this.notbaptised[i].status=='Not-Baptised'){
-        counts++;
+      if(this.notbaptisedd){
+        var filter = this.notbaptisedd.filter((e: { status: String; }) => e.status == 'Not-Baptised');
+        this.notbaptised=filter;
+        for(var i=0;i<this.notbaptised.length;i++){
+          if(this.notbaptised[i].status=='Not-Baptised'){
+            counts++;
+          }
+          this.counts=counts;
+    
+        }
+      }else{
+        this.toastr.error(data.error)
       }
-      this.counts=counts;
-
-    }
-    })
+     // this.toastr.success("You are Seeing Not-Baptised Members Data")
+      
+   
+     })
 
   }
   exportexcel(): void

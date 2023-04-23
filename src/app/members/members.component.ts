@@ -56,6 +56,14 @@ export class MembersComponent {
     this.authservice.getData().subscribe((data:any)=>{
       
       this.examdata=data.data;
+      if(this.examdata){
+        console.log("Working")
+
+
+      }else{
+        this.toastr.error(data.error)
+
+      }
       
    
     })

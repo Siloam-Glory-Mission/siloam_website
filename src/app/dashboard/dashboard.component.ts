@@ -35,60 +35,60 @@ export class DashboardComponent {
   
   ngOnInit(){
     this.authservice.getData().subscribe((data:any)=>{
-      console.log(data)
-      let count = 0;
-      let counts = 0;
-      let contss=0;
-      let contsss=0;
-      let conss=0;
-
-      
       this.examdata=data.data;
-     // this.toastr.success(data.message)
-      //this.totalcount=this.examdata.length;
-      var filter = this.examdata.filter((e: { status: String; }) => e.status == 'Baptised');
-    this.baptised=filter;
-    
-    this.filtere = this.examdata.filter((e: { sex: String; }) => e.sex == 'Male');
-    this.female=this.examdata.filter((e: { sex: String; }) => e.sex == 'Female');
-    
-    var filtered = this.examdata.filter((e: { status: String; }) => e.status == 'Not-Baptised');
-    for(var i=0;i<filtered.length;i++){
-
-      if (filtered[i].status == 'Not-Baptised') {
-        count++;
-      }
       
      
-    }
-    for(var j=0;j<filter.length;j++){
-      if(filter[i].status=='Baptised'){
-        counts++;
+      if(this.examdata){
+        let count = 0;
+        let counts = 0;
+        let contss=0;
+        let contsss=0;
+        let conss=0;
+  
+           //this.totalcount=this.examdata.length;
+      var filter = this.examdata.filter((e: { status: String; }) => e.status == 'Baptised');
+      this.baptised=filter;
+      
+      this.filtere = this.examdata.filter((e: { sex: String; }) => e.sex == 'Male');
+      this.female=this.examdata.filter((e: { sex: String; }) => e.sex == 'Female');
+      
+      var filtered = this.examdata.filter((e: { status: String; }) => e.status == 'Not-Baptised');
+      for(var i=0;i<filtered.length;i++){
+  
+        if (filtered[i].status == 'Not-Baptised') {
+          count++;
+        }
+        
+       
       }
-    }
-    for(var k=0;k<this.examdata.length;k++){
-      if(this.examdata[i]){
-        contss++;
+      for(var j=0;j<filter.length;j++){
+        if(filter[i].status=='Baptised'){
+          counts++;
+        }
       }
-    }
-    for(var m=0;m<this.filtere.length;m++){
-      if(this.filtere[m].sex=='Male'){
-        contsss++;
+      for(var k=0;k<this.examdata.length;k++){
+        if(this.examdata[i]){
+          contss++;
+        }
       }
-    }
-    for(var g=0;g<this.female.length;g++){
-      if(this.female[g].sex=='Female'){
-        conss++;
+      for(var m=0;m<this.filtere.length;m++){
+        if(this.filtere[m].sex=='Male'){
+          contsss++;
+        }
       }
-    }
-    this.count=count;
-    this.counts=counts;
-    this.not=filtered;
-    this.contss=contss;
-    this.contsss=contsss;
-    this.conss=conss;
-   
-   // this.totalbaptised=this.baptised.length;// assume we have two variables num1 and num2 representing the numerator and denominator respectively
+      for(var g=0;g<this.female.length;g++){
+        if(this.female[g].sex=='Female'){
+          conss++;
+        }
+      }
+      this.count=count;
+      this.counts=counts;
+      this.not=filtered;
+      this.contss=contss;
+      this.contsss=contsss;
+      this.conss=conss;
+
+      // this.totalbaptised=this.baptised.length;// assume we have two variables num1 and num2 representing the numerator and denominator respectively
     let percentage = (this.counts / this.contss) * 100;
     let percent = (this.count/this.contss)*100;
 
@@ -98,12 +98,6 @@ export class DashboardComponent {
     this.formatpercentage=this.percent.toFixed(2)+'%';
     this.formattedPercentage = this.percentage.toFixed(2) + '%'; // format the percentage to 2 decimal places
     
-
-    
-    
-    
-      
-    })
     this.authservice.getYouTubeData().subscribe(data => {
       const statistics = data['items'][0]['statistics'];
       this.subscribers = statistics['subscriberCount'];
@@ -111,6 +105,22 @@ export class DashboardComponent {
       this.videoCount = statistics['videoCount'];
     });
 
+    
+   
+     
+      }else{
+        this.toastr.error(data.error)
+      }
+     
+      
+     
+     // this.toastr.success(data.message)
+   
+    
+    
+      
+    })
+   
 
   }
   onClick() {

@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
-  private apiUrl = 'https://app-65980bcb-a1a7-4630-b45f-661ac5c08bc9.cleverapps.io';
+  private apiUrl = 'https://app-93008f89-2c31-4d18-862a-2eed6acf1b49.cleverapps.io';
+ //private apiUrl='http://localhost:8080';
   updatedaata: any;
 
   constructor(private http: HttpClient,private router:Router) {}
 
   login(obj:any) {
+    console.log(obj)
    
     return this.http
       .post<{ token: string }>(`${this.apiUrl}/login`,
@@ -45,16 +47,88 @@ export class AuthService {
         })
       );
   }
-  getData():Observable<any[]> {
-    const url = `${this.apiUrl}/api/getdata`; // Replace with your API endpoint
+
+  
+  getbaptised():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/baptised`; // Replace with your API endpoint
     const token = localStorage.getItem('token');
+
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + token
       })
     };
+    return this.http.get<any[]>(url, httpOptions);
+  }
 
+  
+  gettracking():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/tracking`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+
+  getnotbaptised():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/notbaptised`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+
+  getmaledata():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/male`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+  getfemlaedata():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/female`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+  getData():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/getdata`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
     return this.http.get<any[]>(url, httpOptions);
   }
 

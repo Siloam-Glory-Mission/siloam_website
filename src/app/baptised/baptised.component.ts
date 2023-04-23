@@ -24,13 +24,12 @@ export class BaptisedComponent  {
   
   ngOnInit(){
     
-    this.authservice.getData().subscribe((data:any)=>{
+    this.authservice.getbaptised().subscribe((data:any)=>{
       let counts=0;
-      
+     // console.log(data)
       this.baptisedd=data.data;
-      this.toastr.success("You are Seeing Baptised Members Data")
-      
-    var filter = this.baptisedd.filter((e: { status: String; }) => e.status == 'Baptised');
+      if(this.baptisedd){
+        var filter = this.baptisedd.filter((e: { status: String; }) => e.status == 'Baptised');
     this.baptised=filter;
     for(var i=0;i<this.baptised.length;i++){
       if(this.baptised[i].status=='Baptised'){
@@ -39,6 +38,13 @@ export class BaptisedComponent  {
       this.counts=counts;
 
     }
+   
+
+      }else{
+        this.toastr.error(data.error)
+      }
+     // this.toastr.success("You are Seeing Baptised Members Data")
+      
     
     })
 

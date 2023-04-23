@@ -6,8 +6,35 @@
         <div class="card-body"> 
           <h5 class="card-title">Tracking Website</h5> 
                   </div>
+                  <div class="col-md-12">
+                    <table class="table table-bordred" style="font-size: 15px;">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Uid</th>
+                          <th>token</th>
+                          <th>Decoded Token</th>
+                         
+                          <th>Timestamp</th>
+                        </tr>
+
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let x of tracking; let i=index">
+                          <td>{{i+1}}</td>
+                          <td>{{x.ids}}</td>
+                          <td>{{x.token}}</td>
+                          <td>{{x.decoded}}<br> Decoded Token Issued At :{{getIssuedAt(i)}} <br> Decoded Token Expired At : {{getExpirationTime(i)}}</td>
+                         
+                          <td>{{x.timestamp | date:'dd/MM/YYYY'}}</td>
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
       </div>    
     </section>
+    
   </main>  
 
   

@@ -26,6 +26,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
 import {NgxPrintModule} from 'ngx-print';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
 
@@ -70,4 +71,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
   
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
+
 

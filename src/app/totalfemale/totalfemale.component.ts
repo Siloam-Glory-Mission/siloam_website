@@ -23,14 +23,19 @@ export class TotalfemaleComponent {
   constructor(private authservice:AuthService,private toastr:ToastrService){}
   
   ngOnInit(){
-    this.authservice.getData().subscribe((data:any)=>{
+    this.authservice.getfemlaedata().subscribe((data:any)=>{
       
       this.examdata=data.data;
-      this.toastr.success("You are Seeing Total Female Members List")
+      if(this.examdata){
+        var filter = this.examdata.filter((e: { sex: String; }) => e.sex == 'Female');
+        this.baptised=filter;
+      }else{
+        this.toastr.error(data.error)
+      }
+     // this.toastr.success("You are Seeing Total Female Members List")
       
       
-    var filter = this.examdata.filter((e: { sex: String; }) => e.sex == 'Female');
-    this.baptised=filter;
+   
     })
 
   }
