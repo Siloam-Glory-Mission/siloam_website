@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
-  ///private apiUrl = 'https://app-93008f89-2c31-4d18-862a-2eed6acf1b49.cleverapps.io';
+  private apiUrl = 'https://app-fb9ffbbf-b6d4-40a1-bab7-35abdf049090.cleverapps.io';
  //private apiUrl='http://localhost:8080';
- private apiUrl='https://apissiloam.cyclic.app/';
+ //private apiUrl='https://apissiloam.cyclic.app/';
   updatedaata: any;
 
   constructor(private http: HttpClient,private router:Router) {}
