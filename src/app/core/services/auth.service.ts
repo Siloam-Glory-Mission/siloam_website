@@ -133,6 +133,18 @@ export class AuthService {
     return this.http.get<any[]>(url, httpOptions);
   }
 
+  getlatestdata(obj:any):Observable<any[]> {
+    const url = `${this.apiUrl}/api/latest`;
+    const token = localStorage.getItem('token');
+
+    const httpOptions={
+      headers: new HttpHeaders({
+        'Authorization':'Bearer' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions)
+  }
+
   getsms():Observable<any[]>{
     const url = `${this.apiUrl}/api/sms`; // Replace with your API endpoint
     return this.http.get<any[]>(url);
