@@ -10,6 +10,7 @@ import { TotalfemaleComponent } from './totalfemale/totalfemale.component';
 import { TotalmaleComponent } from './totalmale/totalmale.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { AuthGuard } from './auth.guard';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
   {
@@ -19,42 +20,47 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'baptised',
     component:BaptisedComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'notbaptised',
     component:NotbaptisedComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'members',
     component:MembersComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'sms',
     component:SmsComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'male',
     component:TotalmaleComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'female',
     component:TotalfemaleComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
   },
   {
     path:'tracking',
     component:TrackingComponent,
-    canActivate: [AuthGuard] // Protect this route with the AuthGuard
+    canActivate: [AuthGuard] 
+  },
+  {
+    path:'update',
+    component:UpdateComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: '',

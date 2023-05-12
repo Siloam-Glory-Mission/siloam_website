@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-sidebar></app-sidebar>
 <main id="main" class="main">  
-    <section class="section dashboard" *ngIf="page === 1"> 
+    <section class="section dashboard" > 
       <div class="card">
         <div class="card-body">
             <div class="row ">
@@ -56,7 +56,7 @@
                     <i class="bi bi-zoom-in"></i>
                   </button>
                </td> 
-               <td><button type="button" class="btn btn-primary btn-sm" (click)="Edit()">
+               <td><button type="button" class="btn btn-primary btn-sm" (click)="updatedetails(x)">
                   <i class="ri-edit-2-fill"></i>
                 </button></td>
               </tr>
@@ -230,117 +230,7 @@
     </div>  
 </div>  
     </section>
-    <section *ngIf="page === 2">
-      <form>
-         <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Update Details
-               
-              </h5>
-              
-              <!-- Multi Columns Form -->
-              <form class="row g-3" [formGroup]="updateform" (ngSubmit)="onsubmit()">
-                <div class="col-md-6">
-                  <label  class="form-label">Name</label>
-                  <input type="text" class="form-control" formControlName="name"   >
-                </div>
-                <div class="col-md-6">
-                  <label  class="form-label">Christian Name</label>
-                  <input type="text" class="form-control" formControlName="cname">
-                </div>
-                <div class="col-md-6">
-                  <label  class="form-label">Baptised Status</label>
-                  <input type="text" class="form-control" formControlName="status">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Surname</label>
-                  <input type="text" class="form-control" formControlName="surname">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Gender</label>
-                  <input type="text" class="form-control" formControlName="sex">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Baptised Date</label>
-                  <input type="text" class="form-control"formControlName="sdob">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Date Of Birth</label>
-                  <input type="text" class="form-control" formControlName="dob">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Age</label>
-                  <input type="text" class="form-control" formControlName="age">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Spiritual Age</label>
-                  <input type="text" class="form-control" formControlName="sage">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Occupation</label>
-                  <input type="text" class="form-control" formControlName="occupation">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Software Designation</label>
-                  <input type="text" class="form-control" formControlName="software">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Business</label>
-                  <input type="text" class="form-control" formControlName="business">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Studying</label>
-                  <input type="text" class="form-control" formControlName="studying">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Others</label>
-                  <input type="text" class="form-control" formControlName="others">
-                </div>
-                 <div class="col-md-6">
-                  <label class="form-label">Marital Status</label>
-                  <input type="text" class="form-control" formControlName="marital">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">D.NO.</label>
-                  <input type="text" class="form-control" formControlName="dno">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Village</label>
-                  <input type="text" class="form-control" formControlName="parish">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">City</label>
-                  <input type="text" class="form-control" formControlName="city">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Mobile No.</label>
-                  <input type="text" class="form-control" formControlName="phone">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">E-Mail</label>
-                  <input type="text" class="form-control" formControlName="email">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Last Updated On</label>
-                  <input type="text" class="form-control" formControlName="CreationDate">
-                </div>
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form><!-- End Multi Columns Form -->
-
-            </div>
-          </div>
-      </form>
-    </section>
+  
   </main>  
 
   

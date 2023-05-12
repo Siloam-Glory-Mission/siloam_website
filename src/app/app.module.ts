@@ -28,6 +28,7 @@ import {NgxPrintModule} from 'ngx-print';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { LatestComponent } from './latest/latest.component';
+import { UpdateComponent } from './update/update.component';
 
 
 
@@ -51,6 +52,7 @@ import { LatestComponent } from './latest/latest.component';
     LoadingComponent,
     SearchPipe,
     LatestComponent,
+    UpdateComponent,
     
   ],
   imports: [
