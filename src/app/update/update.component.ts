@@ -79,6 +79,7 @@ export class UpdateComponent {
     this.authservice.updatedata(obj).subscribe((data:any)=>{
       // console.log(data);
           this.toastr.success(data.message)
+          window.location.href='#/dashboard';
 
 
     })

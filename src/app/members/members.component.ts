@@ -35,7 +35,7 @@ update: any;
     this.authservice.getData().subscribe((data:any)=>{
       
       this.examdata=data.data;
-      console.log(this.examdata)
+      //console.log(this.examdata)
       if(this.examdata){
         console.log("Working")
 
@@ -50,7 +50,7 @@ update: any;
 
   }
   updatedetails(x:any){
-    console.log(x)
+  //  console.log(x)
     
     this.router.navigate(['/update'], { queryParams: x });
 
