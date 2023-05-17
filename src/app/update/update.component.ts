@@ -36,7 +36,7 @@ export class UpdateComponent {
       city:[''],
       phone:[''],
       email:[''],
-      CreationDate:[''],
+     // CreationDate:[''],
       business:['']
     })
   }
@@ -44,11 +44,12 @@ export class UpdateComponent {
 
     this.route.queryParams.subscribe(params => {
       this.data = params;
-     console.log(this.data);
+     // console.log(this.data);
     });
   }
   onsubmit(){
     var obj={
+      "code":this.data.code,
       "name":this.updateform.value.name,
       "cname":this.updateform.value.cname,
       "sex":this.updateform.value.sex,
@@ -69,17 +70,19 @@ export class UpdateComponent {
       "city":this.updateform.value.city,
       "phone":this.updateform.value.phone,
       "email":this.updateform.value.email,
-      "CreationDate":this.updateform.value.CreationDate,
-      "business":this.updateform.value.business
+     // "CreationDate":this.updateform.value.CreationDate,
+      "business":this.updateform.value.business,
+      "id":this.data.id
+      
     }
     
     this.authservice.updatedata(obj).subscribe((data:any)=>{
-      console.log(data);
-          this.toastr.success('Welcome')
+      // console.log(data);
+          this.toastr.success(data.message)
 
 
     })
-    console.log(obj)
+    // // console.log(obj)
 
 
   }

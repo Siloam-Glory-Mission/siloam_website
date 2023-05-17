@@ -1,111 +1,104 @@
-<section >
-    <form>
-       <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Update Details
-             
-            </h5>
-            
-            <!-- Multi Columns Form -->
-            <form class="row g-3" [formGroup]="updateform" (ngSubmit)="onsubmit()">
-              <div class="col-md-6">
-                <label  class="form-label">Name</label>
-                <input type="text" class="form-control" formControlName="name" [(ngModel)]="data.name"   >
-              </div>
-              <div class="col-md-6">
-                <label  class="form-label">Christian Name</label>
-                <input type="text" class="form-control" formControlName="cname" [(ngModel)]="data.cname">
-              </div>
-              <div class="col-md-6">
-                <label  class="form-label">Baptised Status</label>
-                <input type="text" class="form-control" formControlName="status" [(ngModel)]="data.status">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Surname</label>
-                <input type="text" class="form-control" formControlName="surname" [(ngModel)]="data.surname">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Gender</label>
-                <input type="text" class="form-control" formControlName="sex" [(ngModel)]="data.sex">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Baptised Date</label>
-                <input type="text" class="form-control"formControlName="sdob" [(ngModel)]="data.sdob">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Date Of Birth</label>
-                <input type="text" class="form-control" formControlName="dob" [(ngModel)]="data.dob">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Age</label>
-                <input type="text" class="form-control" formControlName="age" [(ngModel)]="data.age">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Spiritual Age</label>
-                <input type="text" class="form-control" formControlName="sage" [(ngModel)]="data.sage">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Occupation</label>
-                <input type="text" class="form-control" formControlName="occupation" [(ngModel)]="data.occupation">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Software Designation</label>
-                <input type="text" class="form-control" formControlName="software" [(ngModel)]="data.software">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Business</label>
-                <input type="text" class="form-control" formControlName="business" [(ngModel)]="data.business">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Studying</label>
-                <input type="text" class="form-control" formControlName="studying" [(ngModel)]="data.studying">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Others</label>
-                <input type="text" class="form-control" formControlName="others" [(ngModel)]="data.others">
-              </div>
-               <div class="col-md-6">
-                <label class="form-label">Marital Status</label>
-                <input type="text" class="form-control" formControlName="marital" [(ngModel)]="data.marital">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">D.NO.</label>
-                <input type="text" class="form-control" formControlName="dno" [(ngModel)]="data.dno">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Village</label>
-                <input type="text" class="form-control" formControlName="parish" [(ngModel)]="data.parish">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">City</label>
-                <input type="text" class="form-control" formControlName="city" [(ngModel)]="data.city">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Mobile No.</label>
-                <input type="text" class="form-control" formControlName="phone" [(ngModel)]="data.phone">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">E-Mail</label>
-                <input type="text" class="form-control" formControlName="email" [(ngModel)]="data.email">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Last Updated On</label>
-                <input type="text" class="form-control" formControlName="CreationDate" [(ngModel)]="data.CreationDate">
-              </div>
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck">
-                  <label class="form-check-label" for="gridCheck">
-                    Check me out
-                  </label>
-                </div>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form><!-- End Multi Columns Form -->
+<app-header></app-header>
+<app-sidebar></app-sidebar>
 
-          </div>
+<main id="main" class="main">
+  <form>
+     <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Update Details
+           
+          </h5>
+          
+          <!-- Multi Columns Form -->
+          <form class="row g-3" [formGroup]="updateform" (ngSubmit)="onsubmit()">
+            <div class="col-md-6">
+              <label  class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="name" [(ngModel)]="data.name"   >
+            </div>
+            <div class="col-md-6">
+              <label  class="form-label">Christian Name</label>
+              <input type="text" class="form-control" formControlName="cname" [(ngModel)]="data.cname">
+            </div>
+            <div class="col-md-6">
+              <label  class="form-label">Baptised Status</label>
+              <input type="text" class="form-control" formControlName="status" [(ngModel)]="data.status">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Surname</label>
+              <input type="text" class="form-control" formControlName="surname" [(ngModel)]="data.surname">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Gender</label>
+              <input type="text" class="form-control" formControlName="sex" [(ngModel)]="data.sex">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Baptised Date</label>
+              <input type="text" class="form-control"formControlName="sdob" [(ngModel)]="data.sdob">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Date Of Birth</label>
+              <input type="text" class="form-control" formControlName="dob" [(ngModel)]="data.dob">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Age</label>
+              <input type="text" class="form-control" formControlName="age" [(ngModel)]="data.age">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Spiritual Age</label>
+              <input type="text" class="form-control" formControlName="sage" [(ngModel)]="data.sage">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Occupation</label>
+              <input type="text" class="form-control" formControlName="occupation" [(ngModel)]="data.occupation">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Software Designation</label>
+              <input type="text" class="form-control" formControlName="software" [(ngModel)]="data.software">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Business</label>
+              <input type="text" class="form-control" formControlName="business" [(ngModel)]="data.business">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Studying</label>
+              <input type="text" class="form-control" formControlName="studying" [(ngModel)]="data.studying">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Others</label>
+              <input type="text" class="form-control" formControlName="others" [(ngModel)]="data.others">
+            </div>
+             <div class="col-md-6">
+              <label class="form-label">Marital Status</label>
+              <input type="text" class="form-control" formControlName="marital" [(ngModel)]="data.marital">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">D.NO.</label>
+              <input type="text" class="form-control" formControlName="dno" [(ngModel)]="data.dno">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Village</label>
+              <input type="text" class="form-control" formControlName="parish" [(ngModel)]="data.parish">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" formControlName="city" [(ngModel)]="data.city">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Mobile No.</label>
+              <input type="text" class="form-control" formControlName="phone" [(ngModel)]="data.phone">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">E-Mail</label>
+              <input type="text" class="form-control" formControlName="email" [(ngModel)]="data.email">
+            </div>
+            
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form><!-- End Multi Columns Form -->
+
         </div>
-    </form>
-  </section>
+      </div>
+  </form>
+</main>
