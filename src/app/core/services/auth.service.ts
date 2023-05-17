@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
- private apiUrl = 'https://apissiloam.cyclic.app';
+  private apiUrl = 'https://apissiloam.cyclic.app';
  //private apiUrl='http://localhost:8080';
+ //private apiUrl='https://apissiloam.cyclic.app/';
   updatedaata: any;
 
   constructor(private http: HttpClient,private router:Router) {}
@@ -34,21 +35,16 @@ export class AuthService {
   
   updatedata(obj:any) {
    
-    return this.http
-      .put<{ token: string }>(`${this.apiUrl}/update/218`,
-        obj
-      )
-      .pipe(
+    const id = obj.id;
+    return this.http.put<{ token: string }>(`${this.apiUrl}/api/update/${id}`,obj).pipe(
         tap((response) => {
           //console.log(response)
-          this.updatedaata = 'Data Updated Successfully !';
-          console.log(this.updatedaata)
+          console.log(response)
 
 
         })
       );
   }
-
   
   getbaptised():Observable<any[]> {
     
@@ -144,6 +140,18 @@ export class AuthService {
       })
     };
     return this.http.get<any[]>(url, httpOptions);
+  }
+
+  getlatestdata(obj:any):Observable<any[]> {
+    const url = `${this.apiUrl}/api/latest`;
+    const token = localStorage.getItem('token');
+
+    const httpOptions={
+      headers: new HttpHeaders({
+        'Authorization':'Bearer' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions)
   }
 
   getsms():Observable<any[]>{
