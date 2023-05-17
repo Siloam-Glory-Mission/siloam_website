@@ -31,9 +31,13 @@ export class DashboardComponent {
   percentage: any;
   contsss: any;
   conss: any;
+  tracking: any;
+  countsss: any;
+  latest: any=[];
   constructor(private authservice:AuthService,private http:HttpClientModule,private router: Router,private toastr:ToastrService){}
   
   ngOnInit(){
+    
     this.authservice.getData().subscribe((data:any)=>{
       this.examdata=data.data;
       
@@ -44,6 +48,7 @@ export class DashboardComponent {
         let contss=0;
         let contsss=0;
         let conss=0;
+        let countssss=0;
   
            //this.totalcount=this.examdata.length;
       var filter = this.examdata.filter((e: { status: String; }) => e.status == 'Baptised');
@@ -88,6 +93,7 @@ export class DashboardComponent {
       this.contsss=contsss;
       this.conss=conss;
 
+
       // this.totalbaptised=this.baptised.length;// assume we have two variables num1 and num2 representing the numerator and denominator respectively
     let percentage = (this.counts / this.contss) * 100;
     let percent = (this.count/this.contss)*100;
@@ -105,12 +111,27 @@ export class DashboardComponent {
       this.videoCount = statistics['videoCount'];
     });
 
+    this.authservice.gettracking().subscribe((data:any)=>{
+      this.tracking=data.data.data;
+    for (let i = 0; i < this.tracking.length; i++) {
+      if (this.tracking) { // assuming 'status' is a property of each data object
+        countssss++;
+      }
+    }
+    this.countsss=countssss;
+    //console.log(this.tracking.data.decoded)
+    
+   
+    })
+
     
    
      
       }else{
         this.toastr.error(data.error)
       }
+
+      
      
       
      
@@ -138,6 +159,9 @@ export class DashboardComponent {
   }
   femalee(){
     this.router.navigate(['female'])
+  }
+  trackingg(){
+    this.router.navigate(['tracking'])
   }
 
   

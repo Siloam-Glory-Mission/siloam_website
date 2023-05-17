@@ -3,13 +3,14 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="#/dashboard">
+          <a [ngClass]="selectmenu==0?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(0)"
+        href="#/dashboard">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#/baptised">
+        <a [ngClass]="selectmenu==1?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(1)" href="#/baptised">
           <i class="bx bx-user"></i>
           <span>Baptised List</span>
         </a>
@@ -17,13 +18,13 @@
     
      
       <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#/student/practicetestresult">
+        <a [ngClass]="selectmenu==0?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(0)" href="#/student/practicetestresult">
           <i class="bx bx-laptop"></i>
           <span>Practice Test Result</span>
         </a>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#/notbaptised">
+        <a [ngClass]="selectmenu==2?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(2)" href="#/notbaptised">
           <i class="bx bx-user"></i>
           <span>Not Baptised List</span>
         </a>
@@ -31,50 +32,50 @@
      
     
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#/members">
+        <a [ngClass]="selectmenu==3?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(3)" href="#/members">
           <i class="bx  bx-user"></i>
           <span>Members List</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#/male">
+        <a [ngClass]="selectmenu==4?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(4)" href="#/male">
           <i class="bx  bx-male"></i>
           <span>Total Male Members List</span>
         </a>
       </li>
         <li class="nav-item">
-        <a class="nav-link collapsed" href="#/female">
+        <a [ngClass]="selectmenu==5?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(5)" href="#/female">
           <i class="bx  bx-female"></i>
           <span>Total Female Members List</span>
         </a>
       </li>
       <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="sms">
+        <a [ngClass]="selectmenu==0?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(0)" href="sms">
           <i class="bx  bxs-cart-add"></i>
           <span>SMS Delivery Reports</span>
         </a>
       </li>-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#/tracking">
+        <a [ngClass]="selectmenu==6?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(6)" href="#/tracking">
           <i class="bx  bxs-cart-add"></i>
           <span>Tracking Website</span>
         </a>
       </li> 
       <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#/student/studytracker">
+        <a [ngClass]="selectmenu==0?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(0)" href="#/student/studytracker">
           <i class="bi bi-file-bar-graph"></i>
           <span>Study Tracker</span>
         </a>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#/student/createtest">
+        <a [ngClass]="selectmenu==0?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(0)" href="#/student/createtest">
           <i class="bx bx-laptop"></i>
           <span>Practice Test</span>
         </a>
       </li> -->
       <!-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a [ngClass]="selectmenu==0?'nav-link collapsed menu_active2':'nav-link collapsed'" (click)="gotoment(0)" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>Main Menu</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">

@@ -224,6 +224,20 @@ h6 {
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
   overflow-x: auto;
 }
+.menu_active2 {
+  color: #4154f1!important;
+}
+.menu_active2 i, .menu_active2 span {
+  color: #4154f1!important;
+}
+
+.menu_active {
+  color: #fff!important;
+  background-color:#4154f1;
+}
+.menu_active i, .menu_active span {
+  color: #fff!important;
+}
 
 .card-header,
 .card-footer {

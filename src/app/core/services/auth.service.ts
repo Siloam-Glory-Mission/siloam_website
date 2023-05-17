@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
-  private apiUrl = 'https://app-93008f89-2c31-4d18-862a-2eed6acf1b49.cleverapps.io';
+ private apiUrl = 'https://apissiloam.cyclic.app';
  //private apiUrl='http://localhost:8080';
   updatedaata: any;
 
@@ -31,6 +31,7 @@ export class AuthService {
         })
       );
   }
+  
   updatedata(obj:any) {
    
     return this.http
@@ -63,7 +64,20 @@ export class AuthService {
     return this.http.get<any[]>(url, httpOptions);
   }
 
-  
+  getprofile():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/profile`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+
   gettracking():Observable<any[]> {
     
     const url = `${this.apiUrl}/api/tracking`; // Replace with your API endpoint
@@ -137,6 +151,33 @@ export class AuthService {
     return this.http.get<any[]>(url);
 
   }
+
+  getlatest():Observable<any[]>{
+    const url=`${this.apiUrl}/api/latest`;
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+
+  gettotallatest():Observable<any[]>{
+    const url=`${this.apiUrl}/api/totalcount`;
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+  
   
   getYouTubeData(): Observable<YouTubeResponse>{
     

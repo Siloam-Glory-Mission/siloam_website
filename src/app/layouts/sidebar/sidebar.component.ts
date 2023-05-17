@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  selectmenu: number=0;
+  
+
+  ngOnInit(){
+    this.selectmenu=0
+
+  }
+
+  gotoment(x:number){
+    this.selectmenu=x
+  }
 
 }
