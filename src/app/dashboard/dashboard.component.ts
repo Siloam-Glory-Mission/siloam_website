@@ -37,6 +37,8 @@ export class DashboardComponent {
   constructor(private authservice:AuthService,private http:HttpClientModule,private router: Router,private toastr:ToastrService){}
   
   ngOnInit(){
+
+    
     
     this.authservice.getData().subscribe((data:any)=>{
       this.examdata=data.data;
@@ -80,6 +82,7 @@ export class DashboardComponent {
         if(this.filtere[m].sex=='Male'){
           contsss++;
         }
+        console.log(this.filtere[i])
       }
       for(var g=0;g<this.female.length;g++){
         if(this.female[g].sex=='Female'){
@@ -123,12 +126,20 @@ export class DashboardComponent {
     
    
     })
+    this.authservice.gettotallatest().subscribe((data:any)=>{
+   //   console.log(data)
+      this.totalcount=data.data[0];
+     // console.log(this.totalcount)
+      
+    })
 
     
    
      
       }else{
+       // alert(data.error)
         this.toastr.error(data.error)
+        window.location.href='#/session';
       }
 
       

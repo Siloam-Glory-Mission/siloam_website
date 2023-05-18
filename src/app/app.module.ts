@@ -29,6 +29,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { LatestComponent } from './latest/latest.component';
 import { UpdateComponent } from './update/update.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -53,6 +54,7 @@ import { UpdateComponent } from './update/update.component';
     SearchPipe,
     LatestComponent,
     UpdateComponent,
+    ErrorComponent,
     
   ],
   imports: [

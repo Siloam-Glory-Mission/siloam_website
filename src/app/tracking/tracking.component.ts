@@ -17,18 +17,20 @@ export class TrackingComponent {
     this.auth.gettracking().subscribe((data:any)=>{
       //console.log(data)
       this.tracking=data.data.data;
-      console.log(this.tracking)
+      
+      if(this.tracking){
+        console.log(this.tracking)
       for(var i=0;i<this.tracking.length;i++){
         //console.log(JSON.parse(this.tracking[i].decoded))
         this.trackingg=this.tracking[i].decoded
       }
       this.decoed=data.data.decoded;
       
-      if(this.tracking){
        
 
       }else{
         this.toastr.error(data.error)
+        window.location.href='#/session'
 
       }
       //console.log(this.decoed)

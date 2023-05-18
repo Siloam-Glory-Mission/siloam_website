@@ -11,6 +11,7 @@ import { TotalmaleComponent } from './totalmale/totalmale.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { AuthGuard } from './auth.guard';
 import { UpdateComponent } from './update/update.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,12 @@ const routes: Routes = [
     path:'update',
     component:UpdateComponent,
     canActivate:[AuthGuard]
+  },
+  {
+    path:'session',
+    component:ErrorComponent,
+    canActivate:[AuthGuard]
+
   },
   {
     path: '',

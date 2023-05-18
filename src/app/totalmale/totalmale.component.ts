@@ -29,6 +29,7 @@ export class TotalmaleComponent {
 
       }else{
         this.toastr.error(data.message2)
+        window.location.href='#/session'
       }
 //      this.toastr.success("You Are Seeing Total Male Members List");
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../core/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sms',
@@ -9,13 +10,18 @@ import { AuthService } from '../core/services/auth.service';
 export class SmsComponent {
   examdata: any;
   baptised: any;
-  constructor(private authservice:AuthService){}
+  constructor(private authservice:AuthService,private toastr:ToastrService){}
   
   ngOnInit(){
     this.authservice.getsms().subscribe((data:any)=>{
       
       this.examdata=data;
-      console.log(this.examdata)
+      if(this.examdata){
+
+      }else{
+        this.toastr.error('Session Timed Out Please Login Again')
+        window.location.href='#/session';
+      }
       
     
     })

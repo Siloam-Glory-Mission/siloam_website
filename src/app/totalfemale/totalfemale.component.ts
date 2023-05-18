@@ -31,6 +31,7 @@ export class TotalfemaleComponent {
         this.baptised=filter;
       }else{
         this.toastr.error(data.error)
+        window.location.href='#/session'
       }
      // this.toastr.success("You are Seeing Total Female Members List")
       

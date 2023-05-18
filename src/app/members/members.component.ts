@@ -42,6 +42,7 @@ update: any;
 
       }else{
         this.toastr.error(data.error)
+        window.location.href='#/session'
 
       }
       
