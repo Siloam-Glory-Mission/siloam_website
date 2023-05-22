@@ -66,6 +66,9 @@ update: any;
   updateage(){
     window.location.href='#/updateage'
   }
+  lastupdated(){
+    window.location.href='#/lastupdated';
+  }
   
   exportexcel(): void
   {

@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdatesComponent {
   isButtonDisabled = false;
   isButtonsDisabled = false;
-  validityTimeInSeconds = 18000; // Set the desired validity time in seconds
+  validityTimeInSeconds = 86400; // Set the desired validity time in seconds
   lastClickTime: any;
   lastClickTimes: any;
   examdata: any;

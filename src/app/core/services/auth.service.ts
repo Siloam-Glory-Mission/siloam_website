@@ -46,9 +46,24 @@ export class AuthService {
       );
   }
   
+
   getbaptised():Observable<any[]> {
     
     const url = `${this.apiUrl}/api/baptised`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+
+  reporrt():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/report`; // Replace with your API endpoint
     const token = localStorage.getItem('token');
 
 
