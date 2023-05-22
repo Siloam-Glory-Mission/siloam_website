@@ -35,7 +35,7 @@ update: any;
     this.authservice.getData().subscribe((data:any)=>{
       
       this.examdata=data.data;
-      //console.log(this.examdata)
+      console.log(this.examdata)
       if(this.examdata){
         console.log("Working")
 

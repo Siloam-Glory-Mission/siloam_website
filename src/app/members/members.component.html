@@ -27,6 +27,7 @@
                 <th scope="col">Spiritual Age</th>
                 <th scope="col">Baptised Status</th>
                 <th scope="col">Mobile Number</th>
+                <th scope="col">verified by applicant</th>
                 <th scope="col">Last Updated at</th>
                 <th scope="col" colspan="2">Action</th>
                 
@@ -51,6 +52,7 @@
                 <td>{{x.status || 'N/A'}}</td>
                 
                 <td >{{x.phone ||'N/A'}}</td>
+                <td>{{x.verified || ''}}</td>
                 <td>{{x.CreationDate | date:'dd/MM/yyyy hh:mm a' || 'N/A'}}</td>
                 <td><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" (click)="getselecteddetails(x.id)" data-bs-target="#basicModal">
                     <i class="bi bi-zoom-in"></i>
