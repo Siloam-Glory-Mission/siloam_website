@@ -82,7 +82,7 @@ export class DashboardComponent {
         if(this.filtere[m].sex=='Male'){
           contsss++;
         }
-        console.log(this.filtere[i])
+       
       }
       for(var g=0;g<this.female.length;g++){
         if(this.female[g].sex=='Female'){

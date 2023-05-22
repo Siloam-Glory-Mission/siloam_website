@@ -12,6 +12,7 @@ import { TrackingComponent } from './tracking/tracking.component';
 import { AuthGuard } from './auth.guard';
 import { UpdateComponent } from './update/update.component';
 import { ErrorComponent } from './error/error.component';
+import { UpdatesComponent } from './updates/updates.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,12 @@ const routes: Routes = [
   {
     path:'session',
     component:ErrorComponent,
+    canActivate:[AuthGuard]
+
+  },
+  {
+    path:'updateage',
+    component:UpdatesComponent,
     canActivate:[AuthGuard]
 
   },

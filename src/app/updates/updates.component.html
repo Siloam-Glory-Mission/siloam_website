@@ -1,0 +1,37 @@
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<main id="main" class="main">
+    <form>
+       <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Update Age</h5>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Action</th>
+                 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Age</td>
+                    <td><button class="btn btn-primary" (click)="executeQuery()" [disabled]="isButtonDisabled">update</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Spiritual Age</td>
+                    <td><button class="btn btn-primary" (click)="spiritualage()" [disabled]="isButtonsDisabled" >update</button></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            
+          
+  
+          </div>
+        </div>
+    </form>
+  </main>

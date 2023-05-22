@@ -187,6 +187,32 @@ export class AuthService {
   }
   
   
+  updateage():Observable<any[]>{
+    const url=`${this.apiUrl}/api/updateage`;
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+  
+  spiritualage():Observable<any[]>{
+    const url=`${this.apiUrl}/api/spiritualages`;
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+  
   getYouTubeData(): Observable<YouTubeResponse>{
     
     const youtubeKey = 'AIzaSyDyhcnZK94ljdZpoM38H9q4_TiH3AdNTeY';

@@ -63,6 +63,9 @@ update: any;
   Back(){
     this.page=1;
   }
+  updateage(){
+    window.location.href='#/updateage'
+  }
   
   exportexcel(): void
   {
