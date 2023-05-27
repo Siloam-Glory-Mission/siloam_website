@@ -30,6 +30,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { LatestComponent } from './latest/latest.component';
 import { UpdateComponent } from './update/update.component';
 import { ErrorComponent } from './error/error.component';
+import { UpdatesComponent } from './updates/updates.component';
+import { LastupdatedComponent } from './lastupdated/lastupdated.component';
 
 
 
@@ -55,6 +57,8 @@ import { ErrorComponent } from './error/error.component';
     LatestComponent,
     UpdateComponent,
     ErrorComponent,
+    UpdatesComponent,
+    LastupdatedComponent,
     
   ],
   imports: [

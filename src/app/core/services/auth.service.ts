@@ -46,9 +46,24 @@ export class AuthService {
       );
   }
   
+
   getbaptised():Observable<any[]> {
     
     const url = `${this.apiUrl}/api/baptised`; // Replace with your API endpoint
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+
+  reporrt():Observable<any[]> {
+    
+    const url = `${this.apiUrl}/api/report`; // Replace with your API endpoint
     const token = localStorage.getItem('token');
 
 
@@ -186,6 +201,32 @@ export class AuthService {
     return this.http.get<any[]>(url, httpOptions);
   }
   
+  
+  updateage():Observable<any[]>{
+    const url=`${this.apiUrl}/api/updateage`;
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
+  
+  spiritualage():Observable<any[]>{
+    const url=`${this.apiUrl}/api/spiritualages`;
+    const token = localStorage.getItem('token');
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get<any[]>(url, httpOptions);
+  }
   
   getYouTubeData(): Observable<YouTubeResponse>{
     

@@ -1,0 +1,58 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">  
+    <section class="section dashboard"> 
+      <div class="card">
+        <div class="card-body"> 
+          <h5 class="card-title">Age Updated Reports</h5> 
+                  </div>
+                  <div class="col-md-12">
+                    <table class="table table-bordred" style="font-size: 15px;">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Status</th>
+                          <th>Message</th>
+                          <th>Detailed Details</th>
+                          <th>Timestamp</th>
+                        </tr>
+
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let x of parsed; let i=index">
+                          <td>{{i+1}}</td>
+                          <td>{{x.status}}</td>
+                          <td>{{x.message}}</td>
+                          <td>
+                            <table class="table table-bordered table-hover">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Name</th>
+                                  <th>Date Of Birth</th>
+                                  <th>Age</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let y of x.age;let i=index">
+                                  <td>{{i+1}}</td>
+                                  <td>{{y.name}}</td>
+                                  <td>{{y.dob}}</td>
+                                  <td>{{y.age}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>{{x.time | date:'dd-MM-yyyy'}}</td>
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+      </div>    
+    </section>
+    
+  </main>  
+
+  
+  

@@ -10,32 +10,38 @@ export class TrackingComponent {
   tracking: any;
   decoed: any;
   trackingg: any;
+  updated: any;
   
   constructor(private auth:AuthService,private toastr:ToastrService) {}
 
   ngOnInit(){
-    this.auth.gettracking().subscribe((data:any)=>{
-      //console.log(data)
-      this.tracking=data.data.data;
-      
-      if(this.tracking){
-        console.log(this.tracking)
-      for(var i=0;i<this.tracking.length;i++){
-        //console.log(JSON.parse(this.tracking[i].decoded))
-        this.trackingg=this.tracking[i].decoded
-      }
-      this.decoed=data.data.decoded;
-      
-       
+    this.auth.getData().subscribe((data:any)=>{
+      this.updated=data.data;
+      if(this.updated)
+      {
+        this.auth.gettracking().subscribe((data:any)=>{
+          //console.log(data)
+          this.tracking=data.data.data;
+          
+         
+            console.log(this.tracking)
+          for(var i=0;i<this.tracking.length;i++){
+            //console.log(JSON.parse(this.tracking[i].decoded))
+            this.trackingg=this.tracking[i].decoded
+          }
+          this.decoed=data.data.decoded;
+          
+           
+    
+          
+        })
 
       }else{
-        this.toastr.error(data.error)
-        window.location.href='#/session'
-
+        window.location.href='#/session';
+        this.toastr.error('Session Timed Out Please login again')
       }
-      //console.log(this.decoed)
-      
     })
+
   }
   getIssuedAt(index:number){
     const decodedObj = JSON.parse(this.tracking[index].decoded)

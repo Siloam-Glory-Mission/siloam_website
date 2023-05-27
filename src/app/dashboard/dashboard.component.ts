@@ -39,7 +39,7 @@ export class DashboardComponent {
   ngOnInit(){
 
     this.authservice.gettotallatest().subscribe((data:any)=>{
-      console.log(data)
+    //  console.log(data)
       this.totalcount=data.data[0];
     })
     
@@ -86,7 +86,7 @@ export class DashboardComponent {
         if(this.filtere[m].sex=='Male'){
           contsss++;
         }
-      //  console.log(this.filtere[i])
+       
       }
       for(var g=0;g<this.female.length;g++){
         if(this.female[g].sex=='Female'){
@@ -150,7 +150,6 @@ export class DashboardComponent {
      
       
      
-     // this.toastr.success(data.message)
    
     
     
