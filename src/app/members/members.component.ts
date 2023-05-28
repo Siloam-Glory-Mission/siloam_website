@@ -22,6 +22,7 @@ export class MembersComponent {
   buttonHidden = false;
   profileEditForm: any;
   updateform: any;
+  x: any;
 
   title = 'angular-app';
   fileName= 'ExcelSheet.xlsx';
@@ -59,7 +60,13 @@ update: any;
   getselecteddetails(selecteddata: any) {
     this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === selecteddata);
   }
- 
+ delete(obj:any,selecteddata: any)
+ {
+  this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === selecteddata);
+  this.authservice.delete(this.modaldetails).subscribe((data:any)=>{
+    console.log(data)
+  })
+ }
   Back(){
     this.page=1;
   }
