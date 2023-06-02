@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main id="main" class="main">  
+    <section class="section dashboard"> 
+      <div class="card">
+        <div class="card-body">
+            <div class="row ">
+                <div class="col-md-12">
+          <h5 class="card-title">Siloam Media Daily Report</h5> 
+
+          <div class="col-md-3 " style="float: right;"><input type="text" class="form-control" placeholder="Search...."></div>
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>YouTube Video</th>
+                <th>Facebook Video</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of youtube;let i=index ">
+                <td>{{i+1}}</td>
+                <td>{{x.description}}</td>
+                <td> <iframe width="560" height="315" [src]="getYouTubeEmbedUrl(x.youtube)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  {{x.youtube}}</td>
+                <!-- <td> <iframe src="https://www.facebook.com/plugins/video.php?href={{video.url}}&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                  {{x.facebook}}</td> -->
+                  <!-- <td>  <fb-video [href]="sanitizeUrl(x.facebook)" width="560" height="315" show-text="false"></fb-video>
+                  </td> -->
+              </tr>
+            </tbody>
+            
+          </table>
+                  </div>
+      </div> 
+    </div>  
+</div>  
+    </section>
+  </main>  
+
+  
+  
