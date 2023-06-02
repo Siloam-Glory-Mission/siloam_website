@@ -32,6 +32,7 @@ import { UpdateComponent } from './update/update.component';
 import { ErrorComponent } from './error/error.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { LastupdatedComponent } from './lastupdated/lastupdated.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 
 
@@ -59,6 +60,7 @@ import { LastupdatedComponent } from './lastupdated/lastupdated.component';
     ErrorComponent,
     UpdatesComponent,
     LastupdatedComponent,
+    YoutubeComponent,
     
   ],
   imports: [

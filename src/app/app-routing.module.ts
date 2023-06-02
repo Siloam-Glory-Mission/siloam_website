@@ -14,6 +14,7 @@ import { UpdateComponent } from './update/update.component';
 import { ErrorComponent } from './error/error.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { LastupdatedComponent } from './lastupdated/lastupdated.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 const routes: Routes = [
   {
@@ -80,6 +81,12 @@ const routes: Routes = [
   {
     path:'lastupdated',
     component:LastupdatedComponent,
+    canActivate:[AuthGuard]
+
+  },
+  {
+    path:'livevideos',
+    component:YoutubeComponent,
     canActivate:[AuthGuard]
 
   },
