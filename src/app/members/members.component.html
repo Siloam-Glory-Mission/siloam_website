@@ -65,25 +65,25 @@
                 </button></td>
                 <td>
                   <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"  data-bs-target="#deleteModal">
-                    <i class="bi bi-zoom-in"></i>
+                    <i class="ri-delete-bin-6-fill"></i>
                   </button>
                 </td>
               </tr>
               
             </tbody>
           </table>
-           <div class="modal fade" id="deleteModal" tabindex="-1">
+           <div class="modal fade" id="deleteModal" tabindex="-1" *ngFor="let x of modaldetails | search:search; let i=index">
             <div class="modal-dialog modal-lg">
-              <div class="modal-content">
+              <div class="modal-content" >
                 <div class="modal-header" >
                   <h5 class="modal-title">Delete details from website</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <div class="col-md-12">
-                    <p>Are sure you want to delete the data ?</p>
-                    <button type="button" class="btn btn-danger" style="float: right;" (click)="delete(x)">Delete</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <p>Are You Sure Want To Delete The {{x.surname}} {{x.name}} ?</p>  
+                     <button type="button" class="btn btn-danger btn-sm" style="float: right;" (click)="delete(x.id)"><i class="bi bi-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><i class="bi bi-x-octagon"></i>  Cancel</button>
                 </div>
                 <!-- <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

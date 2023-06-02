@@ -59,14 +59,22 @@ update: any;
   }
   getselecteddetails(selecteddata: any) {
     this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === selecteddata);
+    console.log(this.modaldetails)
   }
- delete(obj:any,selecteddata: any)
- {
-  this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === selecteddata);
-  this.authservice.delete(this.modaldetails).subscribe((data:any)=>{
-    console.log(data)
+delete(id:any){
+  console.log(id)
+  this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === id);
+  console.log(this.modaldetails[0].id)
+
+  this.authservice.delete(this.modaldetails[0].id).subscribe((data:any)=>{
+    this.toastr.success(data.message);
+    window.location.href='#/dashboard';
   })
- }
+
+
+}
+  
+  
   Back(){
     this.page=1;
   }

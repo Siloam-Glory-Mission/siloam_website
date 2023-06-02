@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
- // private apiUrl = 'https://apissiloam.cyclic.app';
- private apiUrl='http://localhost:8080';
+ private apiUrl = 'https://apissiloam.cyclic.app';
+ //private apiUrl='http://localhost:8080';
  //private apiUrl='https://apissiloam.cyclic.app/';
   updatedaata: any;
 
@@ -47,8 +47,10 @@ export class AuthService {
   }
   delete(obj:any)
   {
-    const id=obj.id;
-    return this.http.delete<{ token: string }>(`${this.apiUrl}/api/delete/${id}`,obj).pipe(
+
+    const id=obj;
+    console.log(obj)
+    return this.http.delete(`${this.apiUrl}/api/delete/${id}`,obj).pipe(
       tap((response) => {
         //console.log(response)
         console.log(response)
