@@ -33,6 +33,7 @@ import { ErrorComponent } from './error/error.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { LastupdatedComponent } from './lastupdated/lastupdated.component';
 import { YoutubeComponent } from './youtube/youtube.component';
+import { FacebookModule } from 'ngx-facebook';
 
 
 
@@ -73,7 +74,8 @@ import { YoutubeComponent } from './youtube/youtube.component';
     ToastrModule.forRoot(), // ToastrModule added
     NgxPaginationModule,
     CommonModule,
-    NgxPrintModule
+    NgxPrintModule,
+    FacebookModule.forRoot()
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
