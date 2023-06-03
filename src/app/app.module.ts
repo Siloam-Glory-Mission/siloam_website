@@ -75,7 +75,8 @@ import { FacebookModule } from 'ngx-facebook';
     NgxPaginationModule,
     CommonModule,
     NgxPrintModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

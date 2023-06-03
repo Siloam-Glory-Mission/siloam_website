@@ -15,19 +15,13 @@
                 <th>#</th>
                 <th>Title</th>
                 <th>YouTube Video</th>
-                <th>Facebook Video</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let x of youtube;let i=index ">
                 <td>{{i+1}}</td>
-                <td>{{x.description}}</td>
-                <td> <iframe width="560" height="315" [src]="getYouTubeEmbedUrl(x.youtube)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                  {{x.youtube}}</td>
-                <!-- <td> <iframe src="https://www.facebook.com/plugins/video.php?href={{video.url}}&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-                  {{x.facebook}}</td> -->
-                  <!-- <td>  <fb-video [href]="sanitizeUrl(x.facebook)" width="560" height="315" show-text="false"></fb-video>
-                  </td> -->
+                <td>{{x.description}}<br>Video Live Streamed Month : <b>{{x.month}}</b></td>
+                <td> <iframe width="280" height="158" [src]="getYouTubeEmbedUrl(x.youtube)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>               
               </tr>
             </tbody>
             

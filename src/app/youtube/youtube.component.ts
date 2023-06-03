@@ -13,15 +13,17 @@ export class YoutubeComponent {
   examdata: any;
   youtube: any;
   videoData: any[] = []; // Array to store the video data
+  getdata: any;
 
 
   constructor(private authservice:AuthService,private toastr:ToastrService,private sanitizer: DomSanitizer) {}
 
   ngOnInit(){
-  this.authservice.youtube().subscribe((data:any)=>{
-    console.log(data)
-    this.youtube=data.message;
-  })
+   
+        this.authservice.youtube().subscribe((data:any)=>{
+          this.youtube=data.message;
+        })
+  
 
   }
   getYouTubeEmbedUrl(url: string): SafeResourceUrl {
