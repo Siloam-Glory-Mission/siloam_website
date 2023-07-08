@@ -26,7 +26,7 @@ export class BaptisedComponent  {
     
     this.authservice.getbaptised().subscribe((data:any)=>{
       let counts=0;
-     // console.log(data)
+    
       this.baptisedd=data.data;
       if(this.baptisedd){
         var filter = this.baptisedd.filter((e: { status: String; }) => e.status == 'Baptised');
@@ -44,7 +44,7 @@ export class BaptisedComponent  {
         this.toastr.error(data.error)
         window.location.href='#/session'
       }
-     // this.toastr.success("You are Seeing Baptised Members Data")
+    
       
     
     })
@@ -52,15 +52,15 @@ export class BaptisedComponent  {
   }
   exportexcel(): void
   {
-    /* pass here the table id */
+  
     let element = document.getElementById('print-section');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
  
-    /* generate workbook and add the worksheet */
+   
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
  
-    /* save to file */  
+    
     XLSX.writeFile(wb, this.fileName);
  
   }

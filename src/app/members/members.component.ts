@@ -27,6 +27,7 @@ export class MembersComponent {
   title = 'angular-app';
   fileName= 'ExcelSheet.xlsx';
 update: any;
+  membersdata: any;
   constructor(private authservice:AuthService,private fb: FormBuilder,private toastr:ToastrService,private route: ActivatedRoute,private router: Router){
     
   }
@@ -35,7 +36,7 @@ update: any;
     this.page=1;
     this.authservice.getData().subscribe((data:any)=>{
       
-      this.examdata=data.data;
+      this.membersdata=data.data;
      // console.log(this.examdata)
       if(this.examdata){
         console.log("Working")
