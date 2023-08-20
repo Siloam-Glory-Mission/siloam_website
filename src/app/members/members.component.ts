@@ -59,12 +59,12 @@ update: any;
 
   }
   getselecteddetails(selecteddata: any) {
-    this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === selecteddata);
+    this.modaldetails = this.membersdata.filter((e: { id: any; }) => e.id === selecteddata);
     console.log(this.modaldetails)
   }
 delete(id:any){
   console.log(id)
-  this.modaldetails = this.examdata.filter((e: { id: any; }) => e.id === id);
+  this.modaldetails = this.membersdata.filter((e: { id: any; }) => e.id === id);
   console.log(this.modaldetails[0].id)
 
   this.authservice.delete(this.modaldetails[0].id).subscribe((data:any)=>{

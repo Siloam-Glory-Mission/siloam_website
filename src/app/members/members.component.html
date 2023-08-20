@@ -25,13 +25,13 @@
                 <th scope="col">Name</th>
                 <th scope="col">Christian Name</th>
                 <th scope="col">Gender</th>
+                <th scope="col">Mobile Number</th>
                 <th scope="col">Baptised Date</th>
                 <th scope="col">Spiritual Age</th>
                 <th scope="col">Baptised Status</th>
-                <th scope="col">Mobile Number</th>
                 <th scope="col">verified by applicant</th>
                 <th scope="col">Last Updated at</th>
-                <th scope="col" colspan="2">Action</th>
+                <th scope="col" colspan="2" class="text-center">Action</th>
                 
               </tr>
             </thead>
@@ -46,15 +46,15 @@
                 <td>{{x.cname || 'N/A'}}</td>
                
                 <td >{{x.sex || 'N/A'}}</td>
-               
+                <td >{{x.phone ||'N/A'}}</td>
                 <td >{{x.sdob || 'N/A'}}</td>
                 
                 <td>{{x.sage || 'N/A'}}</td>
 
                 <td>{{x.status || 'N/A'}}</td>
                 
-                <td >{{x.phone ||'N/A'}}</td>
-                <td>{{x.verified || ''}}</td>
+                
+                <td>{{x.verified || 'false'}}</td>
                 <td>{{x.CreationDate | date:'dd/MM/yyyy hh:mm a' || 'N/A'}}</td>
                 <td><button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" (click)="getselecteddetails(x.id)" data-bs-target="#basicModal">
                     <i class="bi bi-zoom-in"></i>
@@ -81,14 +81,11 @@
                 </div>
                 <div class="modal-body">
                   <div class="col-md-12">
-                    <p>Are You Sure Want To Delete The {{x.surname}} {{x.name}} ?</p>  
+                    <p>Are You Sure Want To Delete The Details of  {{x.surname}} {{x.name}} ?</p>  
                      <button type="button" class="btn btn-danger btn-sm" style="float: right;" (click)="delete(x.id)"><i class="bi bi-trash"></i> Delete</button>
                     <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><i class="bi bi-x-octagon"></i>  Cancel</button>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    
-                </div>
+               
               </div>
             </div>
           </div>
@@ -106,140 +103,140 @@
                       <tr>
                         <td>Siloam ID</td>
                         <td>:</td>
-                        <td *ngIf="x.code !== ''">{{x.code}}</td>
-                        <td *ngIf="!x.code || x.code === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td>{{x.code || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Surname</td>
                         <td>:</td>
-                        <td *ngIf="x.surname !== ''">{{x.surname}}</td>
-                        <td *ngIf="!x.surname || x.surname === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.surname || 'N/A'}}</td>
+                        
                       </tr>
                       <tr>
                         <td>Name</td>
                         <td>:</td>
-                        <td *ngIf="x.name !== ''">{{x.name}}</td>
-                        <td *ngIf="!x.name || x.name === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.name || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Christian Name</td>
                         <td>:</td>
-                        <td *ngIf="x.cname !== ''">{{x.cname}}</td>
-                        <td *ngIf="!x.cname || x.cname === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.cname || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Gender</td>
                         <td>:</td>
-                        <td *ngIf="x.sex !== ''">{{x.sex}}</td>
-                        <td *ngIf="!x.sex || x.sex === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.sex || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Date Of Birth</td>
                         <td>:</td>
-                        <td *ngIf="x.dob !== ''">{{x.dob}}</td>
-                        <td *ngIf="!x.dob || x.dob === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td>{{x.dob || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Age</td>
                         <td>:</td>
-                        <td *ngIf="x.age !== ''">{{x.age}}</td>
-                        <td *ngIf="!x.age || x.age === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.age || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Baptised Status</td>
                         <td>:</td>
-                        <td *ngIf="x.status !== ''">{{x.status}}</td>
-                        <td *ngIf="!x.status || x.status === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.status || 'N/A'}}</td>
+                        
                       </tr>
                       <tr>
                         <td>Date Of Baptised</td>
                         <td>:</td>
-                        <td *ngIf="x.sdob !== ''">{{x.sdob}}</td>
-                        <td *ngIf="!x.sdob || x.sdob === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.sdob || 'N/A'}}</td>
+                      
                       </tr>
                       <tr>
                         <td>Spiritual Age</td>
                         <td>:</td>
-                        <td *ngIf="x.sage !== ''">{{x.sage}}</td>
-                        <td *ngIf="!x.sage || x.sage === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.sage || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Occupation</td>
                         <td>:</td>
-                        <td *ngIf="x.occupation !== ''">{{x.occupation}}</td>
-                        <td *ngIf="!x.occupation || x.occupation === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.occupation || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Others</td>
                         <td>:</td>
-                        <td *ngIf="x.others !== ''">{{x.others}}</td>
-                        <td *ngIf="!x.others || x.others === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.others || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Software Designation</td>
                         <td>:</td>
-                        <td *ngIf="x.software !== ''">{{x.software}}</td>
-                        <td *ngIf="!x.software || x.software === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.software || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Business</td>
                         <td>:</td>
-                        <td *ngIf="x.business !== ''">{{x.business}}</td>
-                        <td *ngIf="!x.business || x.business === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.business || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Studying</td>
                         <td>:</td>
-                        <td *ngIf="x.study !== ''">{{x.study}}</td>
-                        <td *ngIf="!x.study || x.study === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.study || 'N/A'}}</td>
+                        
                       </tr>
               <tr>
                         <td>Marital Status</td>
                         <td>:</td>
-                        <td *ngIf="x.marital !== ''">{{x.marital}}</td>
-                        <td *ngIf="!x.marital || x.marital === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.marital || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>D.No</td>
                         <td>:</td>
-                        <td *ngIf="x.dno !== ''">{{x.dno}}</td>
-                        <td *ngIf="!x.dno || x.dno === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.dno || 'N/A'}}</td>
+                        
                       </tr>
                       <tr>
                         <td>Street</td>
                         <td>:</td>
-                        <td *ngIf="x.parish !== ''">{{x.parish}}</td>
-                        <td *ngIf="!x.parish || x.parish === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.parish || 'N/A'}}</td>
+                      
                       </tr>
                       <tr>
                         <td>Village</td>
                         <td>:</td>
-                        <td *ngIf="x.village !== ''">{{x.village}}</td>
-                        <td *ngIf="!x.village || x.village === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.village || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>City</td>
                         <td>:</td>
-                        <td *ngIf="x.city !== ''">{{x.city}}</td>
-                        <td *ngIf="!x.city || x.city === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.city || 'N/A'}}</td>
+                        
                       </tr>
                       <tr>
                         <td>Mobile No.</td>
                         <td>:</td>
-                        <td *ngIf="x.phone !== ''">{{x.phone}}</td>
-                        <td *ngIf="!x.phone || x.phone === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.phone || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>E-mail</td>
                         <td>:</td>
-                        <td *ngIf="x.email !== ''">{{x.email}}</td>
-                        <td *ngIf="!x.email || x.email === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.email || 'N/A'}}</td>
+                       
                       </tr>
                       <tr>
                         <td>Last Updated On</td>
                         <td>:</td>
-                        <td *ngIf="x.CreationDate !== ''">{{x.CreationDate | date:'dd-MM-yyyy'}}</td>
-                        <td *ngIf="!x.CreationDate || x.CreationDate === ''" disabled style="color:rgb(215, 115, 115)">N/A</td>
+                        <td >{{x.CreationDate | date:'dd-MM-yyyy' || 'N/A'}}</td>
+                       
                       </tr>
              </table>
 
