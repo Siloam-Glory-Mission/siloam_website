@@ -12,7 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class YoutubeComponent {
   examdata: any;
   youtube: any;
-  videoData: any[] = []; // Array to store the video data
+  videoData: any=[]; 
   getdata: any;
 
 
@@ -31,6 +31,9 @@ export class YoutubeComponent {
     console.log(videoId)
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+  }
+  getfacebookvideo(){
+
   }
 
 }
