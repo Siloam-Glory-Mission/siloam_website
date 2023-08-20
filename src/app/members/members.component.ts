@@ -38,7 +38,7 @@ update: any;
       
       this.membersdata=data.data;
      // console.log(this.examdata)
-      if(this.examdata){
+      if(this.membersdata){
         console.log("Working")
 
 
