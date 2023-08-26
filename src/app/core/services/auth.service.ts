@@ -60,6 +60,7 @@ export class AuthService {
     );
 
   }
+
   
 
   getbaptised():Observable<any[]> {
@@ -208,6 +209,18 @@ export class AuthService {
     const url = `${this.apiUrl}/api/youtube`; // Replace with your API endpoint
     return this.http.get<any[]>(url);
 
+  }
+  getusers(obj: any): Observable<any[]> {
+    const url = `${this.apiUrl}/api/users`;
+    return this.http.post<any[]>(url, obj);
+  }
+  sendotp(obj:any):Observable<any[]>{
+    const url = `${this.apiUrl}/api/sendotp`;
+    return this.http.post<any[]>(url,obj);
+  }
+  verifyotp(obj:any):Observable<any[]>{
+    const url = `${this.apiUrl}/api/verifyotp`;
+    return this.http.post<any[]>(url,obj)
   }
 
 

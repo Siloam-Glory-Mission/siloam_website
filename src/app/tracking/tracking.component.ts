@@ -24,7 +24,7 @@ export class TrackingComponent {
           this.tracking=data.data.data;
           
          
-            console.log(this.tracking)
+          //  console.log(this.tracking)
           for(var i=0;i<this.tracking.length;i++){
             //console.log(JSON.parse(this.tracking[i].decoded))
             this.trackingg=this.tracking[i].decoded
