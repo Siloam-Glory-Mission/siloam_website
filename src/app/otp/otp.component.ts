@@ -25,6 +25,7 @@ export class OtpComponent {
   }
   ngOnInit(){
 this.otp();
+
        
   }
   otp(){
@@ -54,6 +55,7 @@ this.otp();
     let otpdetails = localStorage.getItem('otpdetails');
     if(otpdetails){
       let otpdetail = JSON.parse(otpdetails);
+      console.log(otpdetail)
 
     var obj2={
       "email":otpdetail.data[0].email,
@@ -62,9 +64,12 @@ this.otp();
     console.log(obj2)
     this.authservice.verifyotp(obj2).subscribe((data)=>{
       console.log(data)
+
       if(data.length==0){
         this.toastr.error("Incorrect OTP")
       }else{
+        localStorage.setItem('logindetails',JSON.stringify(otpdetail.data[0].username))
+        this.toastr.success('Welcome',otpdetail.data[0].username)
         this.router.navigate(['/dashboard'])
       }
     })

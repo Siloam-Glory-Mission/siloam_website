@@ -36,22 +36,12 @@ export class LoginComponent {
       "username": username,
       "password": password,
       
-    };
-    
-    
-    
-    
-   // localStorage.setItem('userdetails',)
+    }
    this.authservice.getusers(test).subscribe((data2)=>{
     console.log(data2)
     console.log(obj.username)
-    
     this.authservice.login(obj).subscribe((data) => {
-     // console.log(data);
-      
-      localStorage.setItem('logindetails',JSON.stringify(obj.username))
       localStorage.setItem('otpdetails',JSON.stringify(data2))
-      this.toastr.success('Welcome',obj.username)
       //this.router.navigate(['/dashboard']);
       this.router.navigate(['/otpverification']);
     });

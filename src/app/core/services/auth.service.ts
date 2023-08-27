@@ -289,6 +289,7 @@ logout()
   
   localStorage.removeItem("token");
   localStorage.removeItem("logindetails");
+  localStorage.removeItem("otpdetails");
   this.finalcheck()
 }
 finalcheck()
