@@ -14,14 +14,21 @@ export class YoutubeComponent {
   youtube: any;
   videoData: any=[]; 
   getdata: any;
+search: any;
+  uniquemonths: any;
+  filtereddata: any;
 
 
   constructor(private authservice:AuthService,private toastr:ToastrService,private sanitizer: DomSanitizer) {}
 
   ngOnInit(){
-   
         this.authservice.youtube().subscribe((data:any)=>{
           this.youtube=data.message;
+         // console.log(this.youtube)
+          
+          this.uniquemonths=unique(this.youtube,'month');
+        //  console.log(this.uniquemonths);
+         // this.filtereddata=
         })
   
 
@@ -35,5 +42,12 @@ export class YoutubeComponent {
   getfacebookvideo(){
 
   }
+  filterdata(x:any){
+    console.log(x.target.value);
+  }
 
 }
+function unique(sbjnm: any, arg1: string): any {
+   const uniqueValues = [...new Set(sbjnm.map((item: { [x: string]: any; }) => item[arg1 ]))];
+   return uniqueValues;
+  }

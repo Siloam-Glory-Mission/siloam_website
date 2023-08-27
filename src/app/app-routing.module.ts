@@ -15,6 +15,7 @@ import { ErrorComponent } from './error/error.component';
 import { UpdatesComponent } from './updates/updates.component';
 import { LastupdatedComponent } from './lastupdated/lastupdated.component';
 import { YoutubeComponent } from './youtube/youtube.component';
+import { OtpComponent } from './otp/otp.component';
 
 const routes: Routes = [
   {
@@ -89,6 +90,11 @@ const routes: Routes = [
     component:YoutubeComponent,
     canActivate:[AuthGuard]
 
+  },
+  {
+    path:'otpverification',
+    component:OtpComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: '',

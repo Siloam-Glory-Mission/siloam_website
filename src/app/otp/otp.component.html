@@ -1,0 +1,57 @@
+<main>
+    <div class="container">
+  
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+  
+              <div class="loginCntHeader text-center  py-2 mb-4 rounded-4 shadow-lg">
+                <img src="assets/img/logo/2.png" class="logo">
+             </div>
+  
+              <div class="card mb-3">
+  
+                <div class="card-body">
+  
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Enter the OTP</h5>
+                  <b class="text-success text-center">{{show_success}}</b>
+                  </div>
+                  <form novalidate [formGroup]="logdata" (ngSubmit)="onLogin()">
+                    <div class="row g-4">
+                         <div class="col-md-12 col-12 ">
+                           <div class="form-group ">
+                               <label for="loginmobile">Enter OTP</label>
+                               <input type="text" id="loginmobile" name="loginmobile" class="form-control "
+                                 minlength="6" maxlength="6" required
+                                 autocomplete="off" formControlName="username"  placeholder="Enter OTP">
+                               <div *ngIf="logdata.controls['username'].invalid && logdata.controls['username'].touched" class="text-danger text-center mt-2 ">
+                                 <div *ngIf="logdata.controls['username'].errors">
+                                     <b>Enter OTP</b> 
+                                 </div>
+                               </div>
+                           </div>
+                         </div>
+                         
+                       <h6 class="text-danger text-center" *ngIf="show_log_error!=''" > {{show_log_error}} </h6>
+                       <div class="text-center col-12">
+                         <button type="submit" class="btn btn-primary rounded-pill-OFF shadow btn-block   w-100" 
+                             id="login">Submit</button> <br>
+                        
+                       </div>
+                    </div>
+                    </form>
+  
+                </div>
+              </div>
+  
+              
+            </div>
+          </div>
+        </div>
+  
+      </section>
+  
+    </div>
+  </main><!-- End #main -->

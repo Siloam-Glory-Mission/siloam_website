@@ -7,8 +7,12 @@
             <div class="row ">
                 <div class="col-md-12">
           <h5 class="card-title">Siloam Media Daily Report</h5> 
-
-          <div class="col-md-3 " style="float: right;"><input type="text" class="form-control" placeholder="Search...."></div>
+          <div class="col-md-3">
+            <select class="form-control" (change)="filterdata($event)">
+              <option value="">-select Month-</option>
+              <option  *ngFor="let x of uniquemonths ">{{x}}</option>
+            </select>
+          </div>
           <table class="table table-borderless">
             <thead>
               <tr>

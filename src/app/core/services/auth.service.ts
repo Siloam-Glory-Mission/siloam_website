@@ -60,6 +60,7 @@ export class AuthService {
     );
 
   }
+
   
 
   getbaptised():Observable<any[]> {
@@ -209,6 +210,18 @@ export class AuthService {
     return this.http.get<any[]>(url);
 
   }
+  getusers(obj: any): Observable<any[]> {
+    const url = `${this.apiUrl}/api/users`;
+    return this.http.post<any[]>(url, obj);
+  }
+  sendotp(obj:any):Observable<any[]>{
+    const url = `${this.apiUrl}/api/sendotp`;
+    return this.http.post<any[]>(url,obj);
+  }
+  verifyotp(obj:any):Observable<any[]>{
+    const url = `${this.apiUrl}/api/verifyotp`;
+    return this.http.post<any[]>(url,obj)
+  }
 
 
   getlatest():Observable<any[]>{
@@ -276,6 +289,7 @@ logout()
   
   localStorage.removeItem("token");
   localStorage.removeItem("logindetails");
+  localStorage.removeItem("otpdetails");
   this.finalcheck()
 }
 finalcheck()

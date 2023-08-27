@@ -23,7 +23,7 @@ export class LastupdatedComponent {
 
       if(this.getdata){
         this.auth.reporrt().subscribe((data:any)=>{
-         console.log(data);
+        // console.log(data);
           
           this.tracking=data.data;
           for(var i=0;i<this.tracking.length;i++)
@@ -35,7 +35,7 @@ export class LastupdatedComponent {
              "time":this.tracking[i].timestamp,
              "age":JSON.parse(this.tracking[i].age)
            }
-           console.log(obj)
+       //    console.log(obj)
            this.parsed.push(obj)
           }
       //    console.log(this.parsed)

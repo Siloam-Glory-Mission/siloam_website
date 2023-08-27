@@ -27,24 +27,26 @@ export class LoginComponent {
     // console.log(this.logdata.value)
     let username = this.logdata.value.username;
     let password = this.logdata.value.password;
-
+    
+    let username2 = this.logdata.value.username;
+    var test={
+      "username":username2
+    }
     var obj = {
       "username": username,
       "password": password,
       
-    };
-    
-    
-    
-   // localStorage.setItem('userdetails',)
+    }
+   this.authservice.getusers(test).subscribe((data2)=>{
+    console.log(data2)
+    console.log(obj.username)
     this.authservice.login(obj).subscribe((data) => {
-     // console.log(data);
-      
-      localStorage.setItem('logindetails',JSON.stringify(obj.username))
-      this.toastr.success('Welcome',obj.username)
+      localStorage.setItem('otpdetails',JSON.stringify(data2))
       //this.router.navigate(['/dashboard']);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/otpverification']);
     });
+    
+   });
    
   }
   

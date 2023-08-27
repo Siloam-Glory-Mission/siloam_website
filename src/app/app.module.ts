@@ -34,6 +34,8 @@ import { UpdatesComponent } from './updates/updates.component';
 import { LastupdatedComponent } from './lastupdated/lastupdated.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { FacebookModule } from 'ngx-facebook';
+import { UniquePipe } from './unique.pipe';
+import { OtpComponent } from './otp/otp.component';
 
 
 
@@ -62,6 +64,8 @@ import { FacebookModule } from 'ngx-facebook';
     UpdatesComponent,
     LastupdatedComponent,
     YoutubeComponent,
+    UniquePipe,
+    OtpComponent,
     
   ],
   imports: [
