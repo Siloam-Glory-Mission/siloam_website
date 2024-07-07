@@ -28,6 +28,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/<your-angular-app-name>  # Adjust this to your Angular app's build output directory
+          publish_dir: ./dist
           publish_branch: gh-pages  # Branch to push to (default is 'gh-pages')
 
