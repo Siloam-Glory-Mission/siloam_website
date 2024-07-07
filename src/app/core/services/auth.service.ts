@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
-  private apiUrl = 'https://apissiloam.cyclic.app';
+  private apiUrl = 'https://siloamm-api.onrender.com';
 // private apiUrl='http://localhost:8080';
  //private apiUrl='https://apissiloam.cyclic.app/';
   updatedaata: any;
