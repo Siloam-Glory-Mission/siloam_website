@@ -44,7 +44,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "https://github.com/Siloam-Glory-Mission/siloam_website"
+              "baseHref": "/siloam_website/"
             },
             "development": {
               "buildOptimizer": false,
