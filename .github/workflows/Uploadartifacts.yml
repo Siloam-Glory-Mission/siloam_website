@@ -35,13 +35,16 @@ jobs:
       - name: Build Angular app
         run: npm run build --if-prod
 
+      - name: Debug - List dist directory
+        run: ls -R ./dist
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './dist/siloam'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
