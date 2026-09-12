@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 
 export class AuthService {
     
-  private apiUrl = 'https://siloamm-api.onrender.com';
-// private apiUrl='http://localhost:8080';
+  //private apiUrl = 'https://ecommerce-backend-l8ij.onrender.com';
+ private apiUrl='http://localhost:3000/api/';
  //private apiUrl='https://apissiloam.cyclic.app/';
   updatedaata: any;
 
@@ -22,7 +22,7 @@ export class AuthService {
     console.log(obj)
    
     return this.http
-      .post<{ token: string }>(`${this.apiUrl}/login`,
+      .post<{ token: string }>(`${this.apiUrl}users/login`,
         obj
       )
       .pipe(

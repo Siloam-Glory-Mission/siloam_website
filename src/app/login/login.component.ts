@@ -30,23 +30,18 @@ export class LoginComponent {
     
     let username2 = this.logdata.value.username;
     var test={
-      "username":username2
+      "email":username2
     }
     var obj = {
-      "username": username,
+      "email": username,
       "password": password,
       
     }
-   this.authservice.getusers(test).subscribe((data2)=>{
-    console.log(data2)
-    console.log(obj.username)
     this.authservice.login(obj).subscribe((data) => {
-      localStorage.setItem('otpdetails',JSON.stringify(data2))
       //this.router.navigate(['/dashboard']);
-      this.router.navigate(['/otpverification']);
+      this.router.navigate(['/dashboard']);
     });
     
-   });
    
   }
   

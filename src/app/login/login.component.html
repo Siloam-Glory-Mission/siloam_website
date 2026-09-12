@@ -25,7 +25,7 @@
                                <label for="loginmobile">Enter Username<span
                                  class="text-danger font-weight-bold">*</span></label>
                                <input type="text" id="loginmobile" name="loginmobile" class="form-control "
-                                 minlength="9" maxlength="9" required
+                                 required
                                  autocomplete="off" formControlName="username" (keyup)="clearfunction()"  placeholder="Enter Username">
                                <div *ngIf="logdata.controls['username'].invalid && logdata.controls['username'].touched" class="text-danger text-center mt-2 ">
                                  <div *ngIf="logdata.controls['username'].errors">
@@ -38,7 +38,7 @@
                            <div class="form-group">
                              <label for="password">Enter Password<span
                                  class="text-danger font-weight-bold">*</span></label>
-                             <input type="password" id="password" name="password" minlength="9" maxlength="9" class="form-control"
+                             <input type="password" id="password" name="password"class="form-control"
                                  required autocomplete="off"  formControlName="password" placeholder="Enter Password" (keyup)="clearfunction()">
                              <div *ngIf="logdata.controls['password'].invalid && logdata.controls['password'].touched" class="text-danger text-center mt-2">
                                  <div *ngIf="logdata.controls['password'].errors">
