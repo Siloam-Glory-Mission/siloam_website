@@ -5,9 +5,6 @@ import * as XLSX from 'xlsx';
 import { ToastrService } from 'ngx-toastr';
 
 
-
-
-
 @Component({
   selector: 'app-totalfemale',
   templateUrl: './totalfemale.component.html',
@@ -27,7 +24,7 @@ export class TotalfemaleComponent {
       
       this.examdata=data.data;
       if(this.examdata){
-        var filter = this.examdata.filter((e: { sex: String; }) => e.sex == 'Female');
+        var filter = this.examdata.filter((e: { gender: String; }) => e.gender == 'Female');
         this.baptised=filter;
       }else{
         this.toastr.error(data.error)

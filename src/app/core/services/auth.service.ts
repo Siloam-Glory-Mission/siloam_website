@@ -64,17 +64,8 @@ export class AuthService {
   
 
   getbaptised():Observable<any[]> {
-    
-    const url = `${this.apiUrl}/api/baptised`; // Replace with your API endpoint
-    const token = localStorage.getItem('token');
-
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-    return this.http.get<any[]>(url, httpOptions);
+    const url = `${this.apiUrl}register/getBaptized`;
+    return this.http.get<any[]>(url);
   }
 
   reporrt():Observable<any[]> {
@@ -136,43 +127,17 @@ export class AuthService {
 
   getnotbaptised():Observable<any[]> {
     
-    const url = `${this.apiUrl}/api/notbaptised`; // Replace with your API endpoint
-    const token = localStorage.getItem('token');
-
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-    return this.http.get<any[]>(url, httpOptions);
+    const url = `${this.apiUrl}register/getNonBaptized`;
+    return this.http.get<any[]>(url);
   }
 
   getmaledata():Observable<any[]> {
-    
-    const url = `${this.apiUrl}/api/male`; // Replace with your API endpoint
-    const token = localStorage.getItem('token');
-
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-    return this.http.get<any[]>(url, httpOptions);
+    const url = `${this.apiUrl}register/getMale`;
+    return this.http.get<any[]>(url);
   }
   getfemlaedata():Observable<any[]> {
-    
-    const url = `${this.apiUrl}/api/female`; // Replace with your API endpoint
-    const token = localStorage.getItem('token');
-
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-    return this.http.get<any[]>(url, httpOptions);
+    const url = `${this.apiUrl}register/getFemale`;
+    return this.http.get<any[]>(url);
   }
   getData():Observable<any[]> {
     

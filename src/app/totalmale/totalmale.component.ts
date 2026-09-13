@@ -24,7 +24,7 @@ export class TotalmaleComponent {
       
       this.examdata=data.data;
       if(this.examdata){
-        var filter = this.examdata.filter((e: { sex: String; }) => e.sex == 'Male');
+        var filter = this.examdata.filter((e: { gender: String; }) => e.gender == 'Male');
         this.baptised=filter;
 
       }else{

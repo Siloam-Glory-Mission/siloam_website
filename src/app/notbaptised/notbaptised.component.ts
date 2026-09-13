@@ -26,10 +26,10 @@ export class NotbaptisedComponent {
       let counts=0;
       this.notbaptisedd=data.data;
       if(this.notbaptisedd){
-        var filter = this.notbaptisedd.filter((e: { status: String; }) => e.status == 'Not-Baptised');
+        var filter = this.notbaptisedd.filter((e: { baptizedStatus: String; }) => e.baptizedStatus == 'Not-Baptised');
         this.notbaptised=filter;
         for(var i=0;i<this.notbaptised.length;i++){
-          if(this.notbaptised[i].status=='Not-Baptised'){
+          if(this.notbaptised[i].baptizedStatus=='Not-Baptised'){
             counts++;
           }
           this.counts=counts;

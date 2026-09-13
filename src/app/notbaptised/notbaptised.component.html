@@ -29,12 +29,12 @@
             <tbody *ngFor="let x of notbaptisedd | search:search; let i=index">
               <tr>
                 <th scope="row">{{i+1}}</th>
-                <td>{{x.code}}</td>
+                <td>{{x.id}}</td>
                 <td>{{x.surname}} {{x.name}}</td>
-                <td>{{x.sex}}</td>
-                <td class="text-danger">{{x.status}}</td>
-                <td>{{x.phone}}</td>
-                <td class="">{{x.CreationDate | date:'dd/MM/yyyy hh:mm a'}}</td>
+                <td>{{x.gender}}</td>
+                <td class="text-danger">{{x.baptizedStatus}}</td>
+                <td>{{x.phoneNumber}}</td>
+                <td class="">{{x.updatedAt | date:'dd/MM/yyyy hh:mm a'}}</td>
               </tr>
               
             </tbody>

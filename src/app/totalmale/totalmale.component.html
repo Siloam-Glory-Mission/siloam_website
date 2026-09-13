@@ -35,15 +35,15 @@
             <tbody *ngFor="let x of baptised | search:search; let i=index">
               <tr>
                 <th scope="row">{{i+1}}</th>
-                <td>{{x.code}}</td>
+                <td>{{x.id}}</td>
                 <td>{{x.surname}} {{x.name}}</td>
-                <td>{{x.cname}}</td>
-                <td>{{x.sex}}</td>
-                <td>{{x.sdob}}</td>
-                <td>{{x.sage}}</td>
-                <td>{{x.status}}</td>
-                <td>{{x.phone}}</td>
-                <td>{{x.CreationDate | date:'dd/MM/yyyy hh:mm a'}}</td>
+                <td>{{x.Cname}}</td>
+                <td>{{x.gender}}</td>
+                <td>{{x.baptizedDate}}</td>
+                <td>{{x.Sage}}</td>
+                <td>{{x.baptizedStatus}}</td>
+                <td>{{x.phoneNumber}}</td>
+                <td>{{x.updatedAt | date:'dd/MM/yyyy hh:mm a'}}</td>
               </tr>
               
             </tbody>

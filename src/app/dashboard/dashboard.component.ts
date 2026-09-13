@@ -56,7 +56,6 @@ export class DashboardComponent {
         let conss=0;
         let countssss=0;
   
-           //this.totalcount=this.examdata.length;
       var filter = this.examdata.filter((e: { status: String; }) => e.status == 'Baptised');
       this.baptised=filter;
       
